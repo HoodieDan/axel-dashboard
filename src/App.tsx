@@ -21,6 +21,7 @@ function App() {
       <h1 className="font-bold underline p-8">
         Hello world!
       </h1>
+      <button>hi</button>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
