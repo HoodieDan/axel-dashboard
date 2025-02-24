@@ -76,7 +76,6 @@ h1 {
   font-family: $font-montreal;
   $vw: 100vw;
   font-size: calc($vw / 1440px * 55px);
-  width: 64vw;
 
   @include media('<phone') {
     font-size: calc($vw / 750px * 55px);
@@ -147,7 +146,7 @@ h5 {
 h6 {
   $vw: 100vw;
   font-family: $font-montreal;
-  font-size: calc($vw / 1920px * 20px);
+  font-size: calc($vw / 1440px * 20px);
 
   @include media('<phone') {
     font-size: calc($vw / 750px * 20px);
@@ -169,16 +168,14 @@ img {
 }
 
 input, textarea {
-  border: 1px solid $color-black;
+  border: 1px solid $color-gray;
   width: 100%;
   border-radius: 8px;
   padding: 12px;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
-  color: $color-white;
+  color: $color-gray;
   font-family: $font-montreal;
   $vw: 100vw;
-  font-size: calc($vw / 1920px * 18px);
+  font-size: calc($vw / 1440px * 16px);
   background: transparent;
 
   @include media('<phone') {
@@ -198,7 +195,7 @@ input, textarea {
   }
 
   &::placeholder {
-    color: $color-black;
+    color: $color-gray;
   }
 
   &:focus {
