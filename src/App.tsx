@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DashboardLayout from './components/DashboardLayout';
+import DashboardLayout from './components/layouts/DashboardLayout';
 import HomePage from './pages/HomePage';
 import UserAnalytics from './pages/Dashboard/User/Analytics';
 import UserDashboard from './pages/Dashboard/User/Index';

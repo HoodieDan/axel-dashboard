@@ -30,7 +30,7 @@ p {
 
   &.big {
     $vw: 100vw;
-    font-size: calc($vw / 1920px * 20px);
+    font-size: calc($vw / 1440px * 20px);
 
     @include media('<phone') {
       font-size: calc($vw / 750px * 20px);
@@ -44,7 +44,7 @@ p {
 
   &.bigger {
     $vw: 100vw;
-    font-size: calc($vw / 1920px * 32px);
+    font-size: calc($vw / 1440px * 32px);
 
     @include media('<phone') {
       font-size: calc($vw / 750px * 32px);
@@ -63,7 +63,6 @@ small {
 
   @include media('<phone') {
     font-size: calc($vw / 750px * 14px);
-    overflow-x: hidden;
   }
 
   @include media('<small') {
@@ -199,7 +198,7 @@ input, textarea {
   }
 
   &:focus {
-    border: 1px solid $color-white;
+    border: 1px solid $color-gunmetal;
     outline: none;
   }
 }
@@ -242,4 +241,20 @@ button {
   @include media('<phone') {
     display: block !important;
   }
+}
+
+.independence {
+  color: $color-independence;
+}
+
+.gunmetal {
+  color: $color-gunmetal;
+}
+
+.light__silver {
+  color: $color-light-silver;
+}
+
+.dark__charcoal {
+  color: $color-dark-charcoal;
 }

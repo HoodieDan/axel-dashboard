@@ -1,0 +1,54 @@
+.user__dashboard__index {
+    $vw: 100vw;
+    
+    .index__card {
+        border: 1px solid $color-slate-gray;
+
+        img {
+            z-index: z('bg');
+        }
+
+        button {
+            z-index: z('content');
+            font-size: calc($vw / 1440px * 14px);
+
+            @include media('<phone') {
+                font-size: calc($vw / 750px * 14px);
+            }
+
+            @include media('<small') {
+                font-size: calc($vw / 500px * 13px);
+            }
+        }
+        
+        &:nth-of-type(1) {
+            background-color: $color-alice-blue;
+        }
+
+        &.other__cards {
+            button {
+                background-color: $color-green-sheen;
+            }
+
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+    }
+
+    .session__score {
+        border: 1px solid $color-slate-gray;
+        background-color: $color-alice-blue;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+
+        .bar {
+            .empty__bar {
+                background-color: $color-light-silver;
+
+                .bar__fill {
+                    background-color: $color-medium-sea-green;
+                }
+            }
+        }
+    }
+}
