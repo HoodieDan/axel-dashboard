@@ -1,9 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @font-face {
     font-family: $font-montreal;
-    src: url("https://db.onlinewebfonts.com/t/4366ceae6f7564999a0f0c3e8698a4ad.eot");
-    src: url("https://db.onlinewebfonts.com/t/4366ceae6f7564999a0f0c3e8698a4ad.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/4366ceae6f7564999a0f0c3e8698a4ad.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/4366ceae6f7564999a0f0c3e8698a4ad.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/4366ceae6f7564999a0f0c3e8698a4ad.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/4366ceae6f7564999a0f0c3e8698a4ad.svg#Neue Montreal")format("svg");
+    src: url('/fonts/neue/NeueMontreal-Bold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: $font-montreal;
+    src: url('/fonts/neue/NeueMontreal-Regular.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: $font-montreal;
+    src: url('/fonts/neue/NeueMontreal-Medium.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: $font-montreal;
+    src: url('/fonts/neue/NeueMontreal-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: block;
 }
