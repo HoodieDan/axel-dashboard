@@ -6,6 +6,7 @@ import UserDashboard from './pages/Dashboard/User/Index';
 import UserSettings from './pages/Dashboard/User/Settings';
 import './styles/index.scss';
 import './App.css'
+import UserAuth from "./pages/userAuth";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           {/* Main Layout Routes */}
           <Route path='/' element={<HomePage />} />
+          <Route path='/userAuth' element={<UserAuth />} />
 
           {/* Dashboard Layout Routes */}
           <Route path="/dashboard/user" element={<DashboardLayout />}>
