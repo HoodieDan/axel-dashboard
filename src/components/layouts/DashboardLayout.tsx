@@ -10,13 +10,13 @@ const DashboardLayout = () => {
         <SideNav />
       </div>
 
-      <div className="nav__and__main overflow-hidden">
+      <div className="nav__and__main overflow-hidden flex flex-col">
         {/* Navbar */}
         <div className="nav">
           <TopNav />
         </div>
         {/* Main content */}
-        <main className="w-full h-screen overflow-auto p-3">
+        <main className="w-full overflow-auto py-3 px-6">
           <Outlet />
         </main>
       </div>

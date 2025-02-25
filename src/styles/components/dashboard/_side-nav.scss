@@ -9,6 +9,10 @@ nav.side__nav {
     align-items: center;
     position: fixed;
 
+    @include media('<phone') {
+        display: none;
+    }
+
     .logo__div {
         height: calc($vw / 1440px * 48px);
         width: 100%;
@@ -53,21 +57,6 @@ nav.side__nav {
 
                 svg {
                     color: $color-green-sheen;
-                }
-            }
-
-            svg {
-                width: calc($vw / 1440px * 24px);
-                height: calc($vw / 1440px * 24px);
-
-                @include media('<phone') {
-                    width: calc($vw / 750px * 26px);
-                    height: calc($vw / 750px * 26px);
-                }
-
-                @include media('<small') {
-                    width: calc($vw / 500px * 28px);
-                    height: calc($vw / 500px * 28px);
                 }
             }
         }
