@@ -1,33 +1,10 @@
-import { useRef, useState } from "react";
-import { Line } from "react-chartjs-2";
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    ChartEvent
-} from "chart.js";
-
-// Register Chart.js components
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-);
+import { useState } from "react";
+import ReactApexChart from "react-apexcharts";
 
 interface Dataset {
     label: string;
     data: number[];
-    borderColor: string;
-    backgroundColor?: string;
+    color: string;
 }
 
 interface LineChartProps {
@@ -36,60 +13,49 @@ interface LineChartProps {
 }
 
 const LineChart = ({ labels, datasets }: LineChartProps) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const chartRef = useRef<any>(null);
     const [selectedPoint, setSelectedPoint] = useState<{ label: string; value: number; dataset: string } | null>(null);
 
-    const data = {
-        labels,
-        datasets: datasets.map((dataset) => ({
-            ...dataset,
-            borderWidth: 2,
-            pointRadius: 1,
-            fill: false,
-            tension: 0.1, // Smooth line
-        })),
-    };
+    const series = datasets.map((dataset) => ({
+        name: dataset.label,
+        data: dataset.data,
+    }));
 
     const options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: true,
-                position: "top" as const,
+        chart: {
+            type: "line" as const,
+            toolbar: { show: false },
+            zoom: { enabled: false },
+            events: {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                dataPointSelection: (config: any) => {
+                    const { dataPointIndex, seriesIndex } = config;
+                    setSelectedPoint({
+                        label: labels[dataPointIndex],
+                        value: datasets[seriesIndex].data[dataPointIndex],
+                        dataset: datasets[seriesIndex].label,
+                    });
+                },
             },
         },
-        scales: {
-            x: {
-                grid: { display: false }, // Hide X grid lines
-            },
-            y: {
-                beginAtZero: true,
-            },
+        xaxis: {
+            categories: labels,
         },
-        onClick: (event: ChartEvent) => {
-            if (!chartRef.current) return;
-            const chart = chartRef.current;
-            const elements = chart.getElementsAtEventForMode(event, "nearest", { intersect: true }, false);
-
-            if (elements.length > 0) {
-                const datasetIndex = elements[0].datasetIndex;
-                const dataIndex = elements[0].index;
-                
-                setSelectedPoint({
-                    label: labels[dataIndex],
-                    value: datasets[datasetIndex].data[dataIndex],
-                    dataset: datasets[datasetIndex].label,
-                });
-            }
+        stroke: {
+            curve: "straight" as const,
+            width: 2,
         },
+        markers: {
+            size: 0,
+            hover: { size: 6 },
+        },
+        colors: datasets.map((dataset) => dataset.color),
+        legend: { position: "bottom" as const },
     };
 
     return (
-        <div className="relative w-full h-96">
-            <Line ref={chartRef} data={data} options={options} />
-            
+        <div className="relative w-full h-70 lg:h-full">
+            <ReactApexChart options={options} series={series} type="line" height="100%" />
+
             {selectedPoint && (
                 <div className="absolute top-2 left-2 p-3 bg-white shadow-md rounded-md">
                     <p className="text-sm font-semibold">📍 {selectedPoint.dataset}</p>

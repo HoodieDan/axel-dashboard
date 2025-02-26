@@ -1,17 +1,13 @@
 nav.side__nav {
     $vw: 100vw;
     height: 100%;
-    width: calc($vw / 1440px * 291px);
+    width: 100%;
     background-color: $color-chinese-black;
     color: $color-white;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: fixed;
-
-    @include media('<phone') {
-        display: none;
-    }
 
     .logo__div {
         height: calc($vw / 1440px * 48px);

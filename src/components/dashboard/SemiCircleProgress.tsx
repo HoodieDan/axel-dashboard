@@ -20,10 +20,10 @@ const SemiCircleProgress = ({ percent }: SemiCircleProgressProps) => {
     const progressY = centerY - r * Math.sin(radianArc);
 
     return (
-        <div className="w-full absolute flex justify-center items-center">
+        <div className="w-80 absolute flex justify-center items-center">
             <svg
                 width="100%"
-                height="auto"
+                height="100%"
                 viewBox="0 0 250 150"
                 xmlns="http://www.w3.org/2000/svg"
                 preserveAspectRatio="none"

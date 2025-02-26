@@ -4,6 +4,11 @@
     border-bottom: 1px solid $color-light-silver;
     color: $color-gunmetal;
 
+    @include media('<phone') {
+        height: calc($vw / 500px * 100px);
+        border-bottom: none;
+    }
+
     .left__top__nav {
         svg {
             color: $color-gunmetal;
