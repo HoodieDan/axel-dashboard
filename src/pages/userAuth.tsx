@@ -3,13 +3,30 @@ import authPageImage from "../assets/images/authPage-image.png";
 import AuthQuestions from "../components/authPageComponents/auth-questions";
 import engageLogo from "../assets/images/engage-x-logo.png";
 import AuthRole from "../components/authPageComponents/auth-roles";
+import Signup from "../components/authPageComponents/signup";
+import Login from "../components/authPageComponents/login";
+import ForgotPassword from "../components/authPageComponents/forgotPassword";
+import { Link } from "react-router-dom";
+// type View = 'signup' | 'login' | 'confirm' | 'forgot';
 const UserPlan = () => {
   const [content, setContent] = useState("");
   const [topicQuestion, setTopicQuestion] = useState("What do you plan on doing?");
-// interface planss {
-//   id: number;
-//   plan: string;
-// }
+
+  // const [view, setView] = useState<View>('signup');
+interface SignupForm {
+  fullName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  termsAccepted: boolean;
+}
+const [signupFormData, setSignupFormData] = useState<SignupForm>({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    termsAccepted: false,
+  });
 
 
 
@@ -45,33 +62,44 @@ const UserPlan = () => {
     {id:3, plan: "Speak"},
   ]
   return (
-    <div className="h-screen px-10 py-5 flex gap-5">
-      <div className="auth flex-1 ">
-        <div className="text-black h-full flex  flex-col gap-5 items-center justify-center">
-          <h1 className="inline-flex items-center text-5xl gap-2  w-fit ">
+    <div className="h-screen md:px-10 px-5 py-5 justify-center md:justify-start  md:flex-row flex-col flex gap-5">
+      <div className="auth flex-[0.7] ">
+        <div className="text-black h-full flex  flex-col gap-5 md:items-center justify-center">
+         {(content !== "forgot password" && content !== "reset password") && <h1 className="inline-flex items-center justify-center w-full text-nowrap text-4xl md:text-5xl gap-2  md:w-fit ">
             Welcome to
             <img
               src={engageLogo}
-              className="w-[190px] mt-3 h-[39.12px]"
+              className="md:w-[190px] w-[130px] mt-1 md:mt-3 h-[29.3px] md:h-[39.12px]"
               alt="engage-x-logo"
             />
-          </h1>
+          </h1>}
           <div>
 
-          <p className="text-3xl text-center  bg-gradient-to-b from-[#1f1f1fdd] to-[#C0C0C0] bg-clip-text text-transparent ">
+          {(content !== "forgot password" && content !== "reset password") && <p className="text-3xl text-center  bg-gradient-to-b from-[#1f1f1fdd] to-[#C0C0C0] bg-clip-text text-transparent ">
             AI-powered public speaking and <br />{" "}
             <span className="">
               presentation training platform
             </span>
-          </p>
+          </p>}
+
+
+          
         {content === "" && <AuthQuestions plans={plans} questions={questions}
         setContent={setContent} content={content} topicQuestion={topicQuestion} setTopicQuestion={setTopicQuestion} />}
+        {
+          content === "signup" && <Signup signupFormData={signupFormData} setSignupFormData={setSignupFormData} setContent={setContent} content={content} />
+        }
+        {
+          content === "login" && <Login  setContent={setContent} content={content} />
+        }
+
+        {(content === "forgot password" || content === "reset password") && <ForgotPassword setContent={setContent} content={content} />}
         {/* {content === "Pitch" || content == "Present" || content == "Speak" && (<AuthRole />)} */}
           </div>
         </div>
         
       </div>
-      <aside className="flex-1 rounded-[45px]  overflow-hidden h-[100vh relative">
+      <aside className="flex-1 rounded-[45px]  md:block hidden overflow-hidden h-[100vh relative">
         <button className="absolute top-8 left-4 flex h-[30px] items-center rounded-3xl gap-2 py-6 px-5  backdrop-blur-sm bg-transparent text-black ">
           <svg
             width="12"
@@ -85,7 +113,7 @@ const UserPlan = () => {
               fill="black"
             />
           </svg>
-          <p className="text-lg">back to website</p>
+          <Link to="/" className="text-lg">back to website</Link>
         </button>
         <img
           src={authPageImage}
