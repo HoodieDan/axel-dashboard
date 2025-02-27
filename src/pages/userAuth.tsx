@@ -1,34 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import authPageImage from "../assets/images/authPage-image.png";
 import AuthQuestions from "../components/authPageComponents/auth-questions";
 import engageLogo from "../assets/images/engage-x-logo.png";
-import AuthRole from "../components/authPageComponents/auth-roles";
 import Signup from "../components/authPageComponents/signup";
 import Login from "../components/authPageComponents/login";
 import ForgotPassword from "../components/authPageComponents/forgotPassword";
 import { Link } from "react-router-dom";
 import Confirmation from "../components/authPageComponents/confirmation";
 import Tutorial from "../components/authPageComponents/tutorial";
-// type View = 'signup' | 'login' | 'confirm' | 'forgot';
 const UserPlan = () => {
   const [content, setContent] = useState("");
   const [topicQuestion, setTopicQuestion] = useState("What do you plan on doing?");
 
-  // const [view, setView] = useState<View>('signup');
-interface SignupForm {
-  fullName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-  termsAccepted: boolean;
-}
-const [signupFormData, setSignupFormData] = useState<SignupForm>({
-    fullName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    termsAccepted: false,
-  });
+
+
 
 
 
@@ -101,23 +86,23 @@ const [signupFormData, setSignupFormData] = useState<SignupForm>({
 
 
           
-        {content === "" && <AuthQuestions plans={plans} questions={questions}
-        setContent={setContent} content={content} topicQuestion={topicQuestion} setTopicQuestion={setTopicQuestion} />}
+        {content === "" && <AuthQuestions  questions={questions}
+        setContent={setContent}  topicQuestion={topicQuestion} setTopicQuestion={setTopicQuestion} />}
         {
-          content === "signup" && <Signup signupFormData={signupFormData} setSignupFormData={setSignupFormData} setContent={setContent} content={content} />
+          content === "signup" && <Signup   setContent={setContent}  />
         }
         {
-          content === "login" && <Login  setContent={setContent} content={content} />
-          // content === "tutorial" && <Tutorial   />
+          content === "login" && <Login  setContent={setContent} />
         }
-        {
-          // content === "login" && <Login  setContent={setContent} content={content} />
-          content === "tutorial" && <Tutorial   />
+                {
+          ///////////////
+          ///// NOT PART OF THE FLOW YET (WAITING FOR BACKEND)
+          ///////////////
+          content === "tutorial" && <Tutorial  />
         }
 
         {(content === "forgot password" || content === "reset password") && <ForgotPassword setContent={setContent} content={content} />}
         {content === "confirmation" && <Confirmation setContent={setContent}  />}
-        {/* {content === "Pitch" || content == "Present" || content == "Speak" && (<AuthRole />)} */}
           </div>
         </div>
         

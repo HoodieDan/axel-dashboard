@@ -10,13 +10,10 @@ interface SignupForm {
 }
 
 interface SignupProps{
-    content: string;
     setContent: Function;
-    signupFormData: SignupForm;
-    setSignupFormData: React.Dispatch<React.SetStateAction<SignupForm>>;
 }
 
-const Signup: React.FC<SignupProps> = ({setContent, setSignupFormData}) => {
+const Signup: React.FC<SignupProps> = ({setContent}) => {
   const [formData, setFormData] = useState<SignupForm>({
     fullName: "",
     email: "",

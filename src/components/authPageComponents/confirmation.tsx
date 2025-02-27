@@ -1,15 +1,12 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 
 interface ConfirmationProps {
     setContent: React.Dispatch<React.SetStateAction<string>>
 }
 const Confirmation: React.FC<ConfirmationProps> = ({setContent}) => {
-    const navigate = useNavigate();
 
     const handleResendLink = () => {
-        // Logic to resend the confirmation link
     };
 
     return (
