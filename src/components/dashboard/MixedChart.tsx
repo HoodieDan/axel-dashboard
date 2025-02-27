@@ -50,7 +50,7 @@ const MixedChart: React.FC<MixedChartProps> = ({ series, categories }) => {
 
     return (
         <div className="w-full h-70 lg:h-full">
-            <Chart options={options} series={series} type="line" height="100%" />
+            <Chart options={options} series={series} type="line" width="100%" height="100%" />
         </div>
     );
 };
