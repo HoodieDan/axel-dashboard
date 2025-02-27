@@ -43,11 +43,7 @@ const UserPlan = () => {
 
 
   ]
-  const plans = [
-    {id:1, plan: "Pitch"},
-    {id:2, plan: "Present"},
-    {id:3, plan: "Speak"},
-  ]
+ 
   return (
     <div className="h-screen md:px-10 px-5 py-5 justify-center md:justify-start  md:flex-row flex-col flex gap-5">
       <div className="auth flex-[0.8] py-5">
