@@ -59,17 +59,18 @@ const Signup: React.FC<SignupProps> = ({setContent, setSignupFormData}) => {
     // Handle signup logic here
     console.log("Form Data:", formData);
     setPasswordError(""); //clear error in case of successful submission
+    setContent("confirmation")
   };
 
   return (
-    <div className="signup-container py-10 ">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <div className="signup-container  py-10  ">
+      <form onSubmit={handleSubmit}  className="flex font-[Montserrat] flex-col gap-5 md:gap-4">
         <div>
           <input
             type="text"
             id="fullName"
             placeholder="Enter your full name"
-            className="rounded-[20px] text-black h-[50px] border-[#d0d5dd]"
+            className="rounded-[20px] font-[Montserrat] text-black h-[60px] md:h-[50px] border-[#d0d5dd]"
             value={formData.fullName}
             onChange={handleChange}
             required
@@ -80,7 +81,7 @@ const Signup: React.FC<SignupProps> = ({setContent, setSignupFormData}) => {
             type="email"
             id="email"
             placeholder="Enter your email"
-            className="rounded-[20px] h-[50px] text-black border-[#d0d5dd]"
+            className="rounded-[20px] font-[Montserrat] h-[60px] md:h-[50px] text-black border-[#d0d5dd]"
             value={formData.email}
             onChange={handleChange}
             required
@@ -91,7 +92,7 @@ const Signup: React.FC<SignupProps> = ({setContent, setSignupFormData}) => {
             type={showPassword ? "text" : "password"}
             placeholder="Enter your password"
             id="password"
-            className="rounded-[20px] h-[50px] pr-12 border text-black   border-[#d0d5dd] active:border  w-full"
+            className="rounded-[20px] font-[Montserrat] h-[60px] md:h-[50px] pr-12 border text-black   border-[#d0d5dd] active:border  w-full"
             value={formData.password}
             onChange={handleChange}
             required
@@ -108,7 +109,7 @@ const Signup: React.FC<SignupProps> = ({setContent, setSignupFormData}) => {
           <input
             type={showConfirmPassword ? "text" : "password"}
             placeholder="Confirm your password"
-            className="rounded-[20px] pr-12 w-full text-black h-[50px] border-[#d0d5dd]"
+            className="rounded-[20px] font-[Montserrat] pr-12 w-full text-black h-[60px] md:h-[50px] border-[#d0d5dd]"
             id="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
@@ -123,25 +124,14 @@ const Signup: React.FC<SignupProps> = ({setContent, setSignupFormData}) => {
           </button>
         </div>
         {passwordError && <p style={{ color: "red" }}>{passwordError}</p>}
-        {/* <div>
-          <label htmlFor="termsAccepted">
-            <input
-              type="checkbox"
-              id="termsAccepted"
-              checked={formData.termsAccepted}
-              onChange={handleChange}
-              required
-            />
-            I agree to the <a href="/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> and <a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-          </label>
-        </div> */}
-        <button type="submit" className="rounded-[20px] h-[50px]">
+       
+        <button type="submit" className="rounded-[20px] h-[60px] md:h-[50px]">
           Get Started
         </button>
       </form>
-      <div className="flex gap-2 items-center my-2">
+      <div className="flex gap-2 w-full justify-center font-[Montserrat] items-center my-2">
         <p>Already have an account?</p>
-        <button onClick={()=>setContent("login")}  className="font-semibold  bg-transparent text-black w-fit p-0">Log in</button>
+        <button onClick={()=>setContent("login")}  className="font-semibold   bg-transparent text-black w-fit p-0">Log in</button>
       </div>
     </div>
   );
