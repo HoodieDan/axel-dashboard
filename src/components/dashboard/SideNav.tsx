@@ -4,7 +4,7 @@ import logo from '../../assets/images/svgs/logo.svg';
 
 const SideNav: React.FC = () => {
     const location = useLocation();
-    const lastSegment = location.pathname.split('/').filter(Boolean).pop();
+    const lastSegment = location.pathname.split('/').splice(2, 1)[0];
     
     const userLinks = [
         { 
