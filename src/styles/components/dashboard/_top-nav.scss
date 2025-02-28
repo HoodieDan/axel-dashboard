@@ -1,0 +1,68 @@
+.top__nav {
+    $vw: 100vw;
+    height: calc($vw / 1440px * 76px);
+    border-bottom: 1px solid $color-light-silver;
+    color: $color-gunmetal;
+
+    @include media('<phone') {
+        height: calc($vw / 500px * 100px);
+        border-bottom: none;
+    }
+
+    .left__top__nav {
+        svg {
+            color: $color-gunmetal;
+            width: calc($vw / 1440px * 20px);
+            height: calc($vw / 1440px * 20px);
+
+            @include media('<phone') {
+                width: calc($vw / 750px * 20px);
+                height: calc($vw / 750px * 20px);
+            }
+
+            @include media('<small') {
+                width: calc($vw / 500px * 20px);
+                height: calc($vw / 500px * 20px);
+            }
+        }
+        .search__div {
+            border-color: $color-light-silver;
+
+            svg {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            input {
+                border-width: 2px;
+                color: $color-gunmetal;
+            }
+        }
+        .line {
+            border-right: 1px solid $color-gunmetal;
+        }
+
+        .user__image {
+            width: calc($vw / 1440px * 44px);
+            height: calc($vw / 1440px * 44px);
+            border-radius: 50%;
+
+            @include media('<phone') {
+                width: calc($vw / 750px * 44px);
+                height: calc($vw / 750px * 44px);
+            }
+
+            @include media('<small') {
+                width: calc($vw / 500px * 44px);
+                height: calc($vw / 500px * 44px);
+            }
+
+            img {
+                object-fit: cover;
+                border-radius: inherit;
+                width: 100%;
+                aspect-ratio: 1/1;
+            }
+        }
+    }
+}

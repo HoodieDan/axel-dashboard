@@ -1,0 +1,123 @@
+.user__dashboard__index {
+    $vw: 100vw;
+
+    .icon__bg {
+        background-color: #64BA9E26;
+    }
+    
+    .index__card {
+        border: 1px solid $color-slate-gray;
+
+        img {
+            z-index: z('bg');
+        }
+
+        button {
+            z-index: z('content');
+            font-size: calc($vw / 1440px * 14px);
+
+            @include media('<phone') {
+                font-size: calc($vw / 750px * 14px);
+            }
+
+            @include media('<small') {
+                font-size: calc($vw / 500px * 13px);
+            }
+        }
+        
+        &:nth-of-type(1) {
+            background-color: $color-alice-blue;
+        }
+
+        &.other__cards {
+            button {
+                background-color: $color-green-sheen;
+            }
+
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+        }
+    }
+
+    .session__score {
+        border: 1px solid $color-bright-gray;
+        background-color: $color-alice-blue;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+    }
+
+    .analytics {
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        border: 1px solid $color-bright-gray;
+
+        .chart__div {
+            aspect-ratio: 2/1;
+
+            @include media('<tablet') {
+                aspect-ratio: auto;
+            }
+        }
+
+        select {
+            color: $color-chinese-black;
+            border: 1px solid $color-bright-gray;
+
+            &:focus {
+                border: 1px solid $color-gunmetal;
+                outline: none;
+            }
+        }
+    }
+
+    .goals {
+        border: 1px solid $color-bright-gray;
+        box-shadow: 0px 2px 2px 0px #0000001A;
+
+        .progress__div {
+            svg {
+                path {
+                    &:nth-of-type(1) {
+                        stroke: $color-light-silver;
+                    }
+                    &:nth-of-type(2) {
+                        stroke: $color-medium-sea-green;
+                    }
+                }
+                circle {
+                    fill: $color-medium-sea-green;
+                    stroke: $color-medium-sea-green;
+                }
+            }
+            .bar {
+                .empty__bar {
+                    background-color: $color-light-silver;
+    
+                    .bar__fill {
+                        background-color: $color-medium-sea-green;
+                    }
+                }
+            }
+        }
+
+        .progress__bars__div {
+            .progress__bar__item {
+                .icon__bg {
+                    svg {
+                        width: calc($vw / 1440px * 20px);
+                        height: calc($vw / 1440px * 20px);
+
+                        @include media('<phone') {
+                            width: calc($vw / 750px * 20px);
+                            height: calc($vw / 750px * 20px);
+                        }
+
+                        @include media('<small') {
+                            width: calc($vw / 500px * 24px);
+                            height: calc($vw / 500px * 24px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

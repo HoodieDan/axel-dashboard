@@ -1,0 +1,40 @@
+.admin__dashboard__index {
+    $vw: 100vw;
+
+    .top__cards {
+        svg {
+            width: calc($vw / 1440px * 20px);
+            height: calc($vw / 1440px * 20px);
+    
+            @include media('<phone') {
+                width: calc($vw / 750px * 20px);
+                height: calc($vw / 750px * 20px);
+            }
+    
+            @include media('<small') {
+                width: calc($vw / 500px * 24px);
+                height: calc($vw / 500px * 24px);
+            }
+        }
+    }
+
+    .dash__card {
+        box-shadow: 0px 2px 2px 0px #0000001A;
+        border: 1px solid $color-bright-gray;
+    }
+
+    .sessions__number {
+        .mixed__chart {
+            aspect-ratio: 2/1;
+        }
+        select {
+            color: $color-chinese-black;
+            border: 1px solid $color-bright-gray;
+
+            &:focus {
+                border: 1px solid $color-gunmetal;
+                outline: none;
+            }
+        }
+    }
+}

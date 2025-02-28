@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import DashboardLayout from './components/DashboardLayout';
+import DashboardLayout from './components/layouts/DashboardLayout';
 import HomePage from './pages/HomePage';
 import UserAnalytics from './pages/Dashboard/User/Analytics';
-import UserDashboard from './pages/Dashboard/User/Index';
+import UserDashboardHome from './pages/Dashboard/User/Index';
 import UserSettings from './pages/Dashboard/User/Settings';
 import './styles/index.scss';
 import './App.css'
 import UserAuth from "./pages/userAuth";
+import AdminDashboardHome from "./pages/Dashboard/Admin/Index";
 
 function App() {
 
@@ -20,7 +21,13 @@ function App() {
 
           {/* Dashboard Layout Routes */}
           <Route path="/dashboard/user" element={<DashboardLayout />}>
-            <Route index element={<UserDashboard />} />
+            <Route index element={<UserDashboardHome />} />
+            <Route path="analytics" element={<UserAnalytics />} />
+            <Route path="settings" element={<UserSettings />} />
+          </Route>
+
+          <Route path="/dashboard/admin" element={<DashboardLayout />}>
+            <Route index element={<AdminDashboardHome />} />
             <Route path="analytics" element={<UserAnalytics />} />
             <Route path="settings" element={<UserSettings />} />
           </Route>
