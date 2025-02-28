@@ -1,6 +1,7 @@
 import React from 'react';
 import LineChart from '../../../components/dashboard/LineChart';
 import MixedChart from '../../../components/dashboard/MixedChart';
+import TableComponent from '../../../components/dashboard/TableComponent';
 
 const AdminDashboardHome: React.FC = () => {
 
@@ -116,7 +117,7 @@ const AdminDashboardHome: React.FC = () => {
             {/* charts */}
             <div className="flex flex-col lg:flex-row lg:items-stretch gap-4">
                 {/* First Column */}
-                <div className="w-full lg:w-1/2 lg:pe-2 mt-3">
+                <div className="w-full lg:w-1/2 lg:pe-2 mt-3 mb-4">
                     <div className="sessions__number dash__card h-full flex flex-col px-5 py-7 rounded-[8px]">
                         <div className="flex justify-between items-center mb-6">
                             <p className="big chinese__black">Number of Sessions</p>
@@ -135,7 +136,7 @@ const AdminDashboardHome: React.FC = () => {
                 </div>
 
                 {/* Second Column */}
-                <div className="w-full lg:w-1/2 lg:ps-2 mt-3">
+                <div className="w-full lg:w-1/2 lg:ps-2 mt-3 mb-4">
                     <div className="sessions__number dash__card h-full flex flex-col px-5 py-7 rounded-[8px]">
                         <div className="flex justify-between items-center mb-6">
                             <p className="big chinese__black">User Growth</p>
@@ -152,7 +153,13 @@ const AdminDashboardHome: React.FC = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div className="flex flex-wrap">
+                <div className="w-full lg:w-6/9 lg:pe-2 mb-4 mt-3">
+                    <TableComponent />
                 </div>
+            </div>
         </div>
     );
 };
