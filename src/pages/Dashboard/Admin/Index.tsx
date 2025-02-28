@@ -1,6 +1,6 @@
 import React from 'react';
 import LineChart from '../../../components/dashboard/LineChart';
-import MixedChart from '../../../components/dashboard/MixedChart';
+import MultiAreaChart from '../../../components/dashboard/MultiAreaChart';
 import TableComponent from '../../../components/dashboard/TableComponent';
 
 const AdminDashboardHome: React.FC = () => {
@@ -75,8 +75,8 @@ const AdminDashboardHome: React.FC = () => {
     ];
 
     const seriesData = [
-        { name: "Current Week", type: "area", data: [5, 10, 15, 25, 18, 14, 10] },
-        { name: "Previous Week", type: "line", data: [3, 8, 12, 20, 15, 10, 7], dashArray: 5 },
+        { name: "Current Week", data: [5, 10, 15, 25, 18, 14, 10] },
+        { name: "Previous Week", data: [3, 8, 12, 20, 15, 10, 7], dashArray: 5 },
     ];
     
     const categoriesData = ["10 Feb", "11 Feb", "12 Feb", "13 Feb", "14 Feb", "15 Feb", "16 Feb"];
@@ -87,7 +87,7 @@ const AdminDashboardHome: React.FC = () => {
             {/* top cards  */}
             <div className="flex flex-wrap items-stretch">
                 {cardsData.map((card, index) => (
-                    <div key={index} className="top__cards w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
+                    <div key={index} className="top__cards w-full md:w-1/2 lg:w-1/4 px-2 mb-3">
                         <div className="dash__card p-4 flex flex-col h-full justify-between rounded-[12px] relative overflow-hidden">
                             <div className="mb-4 flex items-center">
                                 {card.icon}
@@ -117,7 +117,7 @@ const AdminDashboardHome: React.FC = () => {
             {/* charts */}
             <div className="flex flex-col lg:flex-row lg:items-stretch gap-4">
                 {/* First Column */}
-                <div className="w-full lg:w-1/2 lg:pe-2 mt-3 mb-4">
+                <div className="w-full lg:w-1/2 mt-3 mb-3">
                     <div className="sessions__number dash__card h-full flex flex-col px-5 py-7 rounded-[8px]">
                         <div className="flex justify-between items-center mb-6">
                             <p className="big chinese__black">Number of Sessions</p>
@@ -136,7 +136,7 @@ const AdminDashboardHome: React.FC = () => {
                 </div>
 
                 {/* Second Column */}
-                <div className="w-full lg:w-1/2 lg:ps-2 mt-3 mb-4">
+                <div className="w-full lg:w-1/2 mt-3 mb-3">
                     <div className="sessions__number dash__card h-full flex flex-col px-5 py-7 rounded-[8px]">
                         <div className="flex justify-between items-center mb-6">
                             <p className="big chinese__black">User Growth</p>
@@ -149,15 +149,22 @@ const AdminDashboardHome: React.FC = () => {
                             </div>
                         </div>
                         <div className="chart__div mixed__chart flex-1">
-                            <MixedChart series={seriesData} categories={categoriesData} />
+                            <MultiAreaChart series={seriesData} categories={categoriesData} />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="flex flex-wrap">
-                <div className="w-full lg:w-6/9 lg:pe-2 mb-4 mt-3">
-                    <TableComponent />
+            <div className="flex flex-wrap gap-4">
+                <div className="w-full lg:w-6/9 mb-4 mt-3 shad__table">
+                    <div className="dash__card px-5 py-4 rounded-[8px]">
+                        <TableComponent />
+                    </div>
+                </div>
+
+                <div className="w-full lg:w-3/9 mb-4 mt-3 table">
+                    <div className="dash__card w-full px-5 py-4 rounded-[8px]">
+                    </div>
                 </div>
             </div>
         </div>

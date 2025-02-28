@@ -21,12 +21,10 @@
     .dash__card {
         box-shadow: 0px 2px 2px 0px #0000001A;
         border: 1px solid $color-bright-gray;
+        background-color: $color-white;
     }
 
     .sessions__number {
-        .mixed__chart {
-            aspect-ratio: 2/1;
-        }
         select {
             color: $color-chinese-black;
             border: 1px solid $color-bright-gray;
@@ -34,6 +32,22 @@
             &:focus {
                 border: 1px solid $color-gunmetal;
                 outline: none;
+            }
+        }
+    }
+
+    .shad__table {
+        button {
+            background: transparent;
+            color: $color-chinese-black;
+
+            &[role="checkbox"] {
+                padding: 4px;
+            }
+
+            thead {
+                background-color: $color-ghost-white;
+                color: $color-chinese-black
             }
         }
     }

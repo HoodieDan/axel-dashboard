@@ -215,7 +215,7 @@ const UserDashboardHome: React.FC = () => {
                                             <small>{ goal.title }</small>
                                             <small>{ goal.percent }%</small>
                                         </div>
-                                        <div className='mt-1'>
+                                        <div className='mt-2'>
                                             <SegmentedProgressBar percent={goal.percent} color={goal.color} divisions={10} />
                                         </div>
                                     </div>
