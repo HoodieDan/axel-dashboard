@@ -48,10 +48,10 @@ const Signup: React.FC<SignupProps> = ({setContent}) => {
       return;
     }
 
-    if (!formData.termsAccepted) {
-      alert("Please accept the terms and conditions");
-      return;
-    }
+    // if (!formData.termsAccepted) {
+    //   alert("Please accept the terms and conditions");
+    //   return;
+    // }
 
     // Handle signup logic here
     console.log("Form Data:", formData);
