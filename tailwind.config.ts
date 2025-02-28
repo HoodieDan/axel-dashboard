@@ -1,6 +1,6 @@
 export default {
   important: true,
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: { extend: {} },
   plugins: [],
 };
