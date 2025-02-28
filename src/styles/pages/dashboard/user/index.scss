@@ -44,16 +44,6 @@
         border: 1px solid $color-bright-gray;
         background-color: $color-alice-blue;
         box-shadow: 0px 2px 2px 0px #0000001A;
-
-        .bar {
-            .empty__bar {
-                background-color: $color-light-silver;
-
-                .bar__fill {
-                    background-color: $color-medium-sea-green;
-                }
-            }
-        }
     }
 
     .analytics {

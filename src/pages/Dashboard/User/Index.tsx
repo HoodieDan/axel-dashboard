@@ -165,7 +165,7 @@ const UserDashboardHome: React.FC = () => {
                             <p className="dark__charcoal">Public Speaking Score</p>
                             <p className="big">{score}%</p>
                         </div>
-                        <SegmentedProgressBar percent={score} color='#40B869' divisions={5} height={4} />
+                        <SegmentedProgressBar percent={score} color='#40B869' divisions={5} />
                         <p className='dark__charcoal mt-6'>✊Keep going! You’re improving!</p>
                     </div>
 
@@ -216,7 +216,7 @@ const UserDashboardHome: React.FC = () => {
                                             <small>{ goal.percent }%</small>
                                         </div>
                                         <div className='mt-1'>
-                                            <SegmentedProgressBar percent={goal.percent} color={goal.color} divisions={10} height={3} />
+                                            <SegmentedProgressBar percent={goal.percent} color={goal.color} divisions={10} />
                                         </div>
                                     </div>
                                 </div>
