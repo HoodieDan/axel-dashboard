@@ -85,7 +85,7 @@ function Pricing() {
       </div>
 
       <div className="flex flex-col lg:flex-row space-y-[75px] relative justify-between overflow-clip w-full pl-[30px] py-[50px] lg:py-0 lg:pl-[50px] lg:h-[344px] lg:pt-[50px] bg-[#6F7C8E] rounded-[20px] text-white">
-        <div className="h-full w-[50%]">
+        <div className="h-full lg:w-[50%]">
           <div className="lg:w-full pr-[30px] lg:pr-0">
             <h2 className="text-[30px] font-montreal">
               Enterprise & Team Plans
@@ -113,7 +113,7 @@ function Pricing() {
             </button>
           </div>
         </div>
-        <div className="w-[50%] h-full relative">
+        <div className="lg:w-[50%] h-full relative">
           <img
             className="hidden lg:block absolute right-0 bottom-0"
             src="./assets/product.png"
