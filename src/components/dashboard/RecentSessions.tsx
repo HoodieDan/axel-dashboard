@@ -11,7 +11,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ChevronsUpDown, ChevronDown, MoreHorizontal, ListFilter } from "lucide-react"
+import { ChevronsUpDown, ChevronDown, MoreHorizontal, ListFilter, ChartLine, Download } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -161,8 +161,8 @@ export const columns: ColumnDef<Session>[] = [
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem>View Report</DropdownMenuItem>
-            <DropdownMenuItem>Download</DropdownMenuItem>
+            <DropdownMenuItem> <ChartLine className="text-black" /> View Report</DropdownMenuItem>
+            <DropdownMenuItem> <Download className="text-black" /> Download</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )

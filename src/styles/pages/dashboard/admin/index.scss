@@ -36,6 +36,14 @@
         }
     }
 
+    .chart__div {
+        aspect-ratio: 2/1;
+
+        @include media('<tablet') {
+            aspect-ratio: auto;
+        }
+    }
+
     .shad__table {
         button {
             background: transparent;
@@ -49,6 +57,38 @@
                 background-color: $color-ghost-white;
                 color: $color-chinese-black
             }
+        }
+    }
+
+    .donut__chart {
+        .apexcharts-series {
+            // &[rel="1"] {
+            //     path {
+            //         transform: scale(1.1); /* Increase outer radius */
+            //         transform-origin: center;
+            //     }
+            // }
+            &[rel="2"] {
+                path {
+                    transform: scale(0.8) translate(-0.8vw, -0.6vw);
+                    transform-origin: center;
+
+                    @include media('<phone') {
+                        transform: scale(0.8) translate(-4vw, -3vw);
+                        transform-origin: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .donut__details {
+        .auro__bg {
+            background-color: $color-auro-metal-saurus;
+        }
+
+        .gunmetal__bg {
+            background-color: $color-gunmetal;
         }
     }
 }

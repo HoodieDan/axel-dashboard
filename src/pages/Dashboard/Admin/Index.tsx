@@ -1,7 +1,8 @@
 import React from 'react';
 import LineChart from '../../../components/dashboard/LineChart';
 import MultiAreaChart from '../../../components/dashboard/MultiAreaChart';
-import TableComponent from '../../../components/dashboard/TableComponent';
+import RecentSessions from '../../../components/dashboard/RecentSessions';
+import DonutChart from '@/components/dashboard/DonutChart';
 
 const AdminDashboardHome: React.FC = () => {
 
@@ -81,6 +82,11 @@ const AdminDashboardHome: React.FC = () => {
     
     const categoriesData = ["10 Feb", "11 Feb", "12 Feb", "13 Feb", "14 Feb", "15 Feb", "16 Feb"];
 
+    const donutData = [
+        { name: "Users", data: [908, 92] }
+    ];
+    const donutCategories = ["Active Users", "Inactive Users"];
+
     return (
         <div className='admin__dashboard__index py-3'>
 
@@ -148,22 +154,70 @@ const AdminDashboardHome: React.FC = () => {
                             </select>
                             </div>
                         </div>
-                        <div className="chart__div mixed__chart flex-1">
+                        <div className="chart__div flex-1">
                             <MultiAreaChart series={seriesData} categories={categoriesData} />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="flex flex-wrap gap-4">
-                <div className="w-full lg:w-6/9 mb-4 mt-3 shad__table">
+            <div className="flex flex-wrap lg:items-stretch">
+                <div className="w-full lg:w-6/9 lg:pe-2 mb-4 mt-3 shad__table">
                     <div className="dash__card px-5 py-4 rounded-[8px]">
-                        <TableComponent />
+                        <RecentSessions />
                     </div>
                 </div>
 
-                <div className="w-full lg:w-3/9 mb-4 mt-3 table">
+                <div className="w-full lg:w-3/9 lg:ps-2 mb-4 mt-3 h-full">
                     <div className="dash__card w-full px-5 py-4 rounded-[8px]">
+                        <div className="flex items-center justify-between mb-4">
+                            <p className="big">Active Users</p>
+                            <small className="underline cursor-pointer">View All</small>
+                        </div>
+                        <div className="w-full h-auto donut__chart">
+                            <div className="h-60 mb-3">
+                                <DonutChart series={donutData} categories={donutCategories} />
+                            </div>
+
+                            <div className="donut__details p-3">
+
+                                {/* total users  */}
+                                <div className="flex justify-between items-center mb-2.5">
+                                    <div className="flex gap-2 items-center">
+                                        <h4 className='gunmetal'>{donutData[0].data.reduce((acc, value) => acc + value, 0)}</h4>
+                                        <p className='auro__metal'>Total Users</p>
+                                    </div>
+                                    <div className="flex items-center me-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13.7508 9C13.7508 8.80109 13.8298 8.61032 13.9705 8.46967C14.1111 8.32902 14.3019 8.25 14.5008 8.25H18.0008C18.1997 8.25 18.3905 8.32902 18.5312 8.46967C18.6718 8.61032 18.7508 8.80109 18.7508 9V12.5C18.7508 12.6989 18.6718 12.8897 18.5312 13.0303C18.3905 13.171 18.1997 13.25 18.0008 13.25C17.8019 13.25 17.6111 13.171 17.4705 13.0303C17.3298 12.8897 17.2508 12.6989 17.2508 12.5V10.81L12.5308 15.53C12.3902 15.6705 12.1996 15.7493 12.0008 15.7493C11.8021 15.7493 11.6114 15.6705 11.4708 15.53L9.00082 13.06L6.53082 15.53C6.38865 15.6625 6.2006 15.7346 6.0063 15.7312C5.812 15.7277 5.62661 15.649 5.4892 15.5116C5.35179 15.3742 5.27308 15.1888 5.26965 14.9945C5.26622 14.8002 5.33834 14.6122 5.47082 14.47L8.47082 11.47C8.61145 11.3295 8.80207 11.2507 9.00082 11.2507C9.19957 11.2507 9.3902 11.3295 9.53082 11.47L12.0008 13.94L16.1908 9.75H14.5008C14.3019 9.75 14.1111 9.67098 13.9705 9.53033C13.8298 9.38968 13.7508 9.19891 13.7508 9Z" fill="#07A042"/>
+                                        </svg>
+                                        <p style={{ color: '#07A042' }}>1.7%</p>
+                                    </div>
+                                </div>
+
+                                {/* Active Users  */}
+                                <div className="flex justify-between items-center mb-2">
+                                    <div className="flex gap-2 items-center">
+                                        <div className="gunmetal__bg h-4 w-2 rounded-[2px]"></div>
+                                        <p className='auro__metal'>Active Users</p>
+                                    </div>
+                                    <div className="flex items-center me-2">
+                                        <p className='gunmetal'>{ donutData[0].data[0] }</p>
+                                    </div>
+                                </div>
+
+                                {/* inactive users  */}
+                                <div className="flex justify-between items-center">
+                                    <div className="flex gap-2 items-center">
+                                        <div className="auro__bg h-4 w-2 rounded-[2px]"></div>
+                                        <p className='auro__metal'>Inactive Users</p>
+                                    </div>
+                                    <div className="flex items-center me-2">
+                                        <p className='gunmetal'>{ donutData[0].data[1] }</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
