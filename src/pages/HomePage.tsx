@@ -1,6 +1,4 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { increment } from "../store/slices/counter";
 import Hero from "../components/homepage/Hero";
 import Intro from "../components/homepage/Intro";
 import Benefits from "../components/homepage/Benefits";
