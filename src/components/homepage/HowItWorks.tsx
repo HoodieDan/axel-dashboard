@@ -28,8 +28,8 @@ function HowItWorks() {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row w-full lg:justify-between items-center">
-        <div>
+      <div className="flex flex-col lg:flex-row w-full lg:justify-between items-center gap-x-10">
+        <div className="">
           <div className="flex gap-x-[30px] items-center">
             <div className="h-[45px] w-[45px] bg-gunmetal/50 flex items-center justify-center text-white rounded-full text-[18px]">
               1
@@ -90,10 +90,12 @@ function HowItWorks() {
           </div>
         </div>
 
-        <img
-          src="./assets/videopc.png"
-          className="w-[843px] hidden lg:block h-[509px]"
-        />
+        <div className="h-[509px] w-full hidden lg:block rounded-3xl overflow-clip relative">
+          <img
+            src="./assets/videopc.png"
+            className="absolute h-full w-full object-cover top-0 right-0"
+          />
+        </div>
         <div className="h-[509px] w-full mt-[80px] lg:hidden rounded-3xl overflow-clip relative">
           <img
             src="./assets/videomb.png"

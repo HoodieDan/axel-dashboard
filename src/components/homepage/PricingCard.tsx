@@ -15,7 +15,7 @@ function PricingCard({ plan }: Params) {
   return (
     <div
       className={clsx(
-        "h-max lg:h-[600px] w-max p-[30px] font-montreal rounded-[24px] border flex flex-col justify-between border-[#6F7C8E]",
+        "h-max lg:h-[650px] p-[30px] font-montreal  max-w-[500px] rounded-[24px] border flex flex-col justify-between border-[#6F7C8E]",
         plan.highlight &&
           "bg-gunmetal text-white relative lg:bottom-[48px] border-none"
       )}
@@ -74,7 +74,7 @@ function PricingCard({ plan }: Params) {
                   />
                 </svg>
               </div>
-              <p className="text-[16px] w-[226px]">{content}</p>
+              <p className="text-[16px] w-full ">{content}</p>
             </div>
           ))}
         </div>
