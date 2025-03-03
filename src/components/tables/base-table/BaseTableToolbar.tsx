@@ -1,6 +1,7 @@
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table } from "@tanstack/react-table";
-import { Search } from "lucide-react";
+import { ListFilter, Search } from "lucide-react";
 import { HTMLAttributes } from "react";
 import BaseTableDatePicker from "./BaseTableDatePicker";
 import BaseTableSelectFilters from "./BaseTableSelectFilters";
@@ -25,9 +26,18 @@ const BaseTableToolbar = <TData,>({ table }: IBaseTableTolbarProps<TData>) => {
                         className="min-w-xs text-primary-0 placeholder:text-primary-0/80 pl-8 border-light-silver focus-visible:border-none focus-visible:ring-1 focus-visible:ring-primatext-primary-0 transition duration-300"
                     />
                 </div>
-                <BaseTableSortOptions table={table} />
+                <div className="md:flex hidden items-center gap-x-3">
+                    <Button className="bg-transparent hover:bg-transparent border border-bright-gray text-primary-0 font-normal">
+                        <ListFilter className="size-4" />
+                        <span>Filter</span>
+                    </Button>
+                    <BaseTableSortOptions table={table} />
+                </div>
+                <Button className="md:hidden bg-transparent hover:bg-transparent border border-bright-gray text-primary-0 font-normal">
+                    <ListFilter className="size-4" />
+                </Button>
             </div>
-            <div className="flex items-center gap-x-3">
+            <div className="md:flex hidden items-center gap-x-3">
                 <BaseTableDatePicker table={table} />
                 <BaseTableSelectFilters table={table} />
             </div>

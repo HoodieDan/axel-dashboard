@@ -89,7 +89,7 @@ export default function BaseTableSelectFilters<TData>({ table }: IBaseTableSelec
             </Popover>
             {BaseTableSelectOptions.map(({ id, placeholder, options }) => (
                 <Select key={id}>
-                    <SelectTrigger className="w-fit text-primary-0 data-[placeholder]:text-primary-0 [&_svg]:opacity-100 [&_svg:not([class*='text-'])]:text-primary-0 flex-row-reverse gap-1.5">
+                    <SelectTrigger className="w-fit text-primary-0 data-[placeholder]:text-primary-0 [&_svg]:opacity-100 [&_svg:not([class*='text-'])]:text-primary-0 flex-row-reverse gap-1.5 focus-visible:ring-0">
                         <SelectValue placeholder={placeholder} />
                     </SelectTrigger>
                     <SelectContent className="[&_.select-viewport]:p-0">

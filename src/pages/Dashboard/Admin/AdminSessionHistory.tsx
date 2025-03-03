@@ -1,12 +1,12 @@
 import SessionHistoryTable from "@/components/tables/session-history-table/admin";
 
-const SessionHistory = () => {
+const AdminSessionHistory = () => {
     return (
-        <section className="py-3 grid gap-y-6">
+        <section className="py-3 flex flex-col gap-y-6">
             <h6>Session History</h6>
             <SessionHistoryTable />
         </section>
     );
 };
 
-export default SessionHistory;
+export default AdminSessionHistory;

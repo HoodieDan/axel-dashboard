@@ -57,7 +57,7 @@ export function BaseTable<TData, TValue>({ columns, data }: BaseTableProps<TData
         <div className="flex flex-col gap-y-6">
             <BaseTableToolbar table={table} />
 
-            <ScrollArea className="rounded-md border">
+            <ScrollArea className="rounded-md border whitespace-nowrap">
                 <Table>
                     <TableHeader>
                         {table.getHeaderGroups().map((headerGroup) => (
@@ -80,13 +80,10 @@ export function BaseTable<TData, TValue>({ columns, data }: BaseTableProps<TData
                                 <TableRow
                                     key={row.id}
                                     data-state={row.getIsSelected() && "selected"}
-                                    className="data-[state=selected]:bg-bright-gray"
+                                    className="hover:bg-bright-gray/50 data-[state=selected]:bg-bright-gray"
                                 >
                                     {row.getVisibleCells().map((cell) => (
-                                        <TableCell
-                                            key={cell.id}
-                                            className="text-dark-charcoal p-4 align-baseline whitespace-nowrap"
-                                        >
+                                        <TableCell key={cell.id} className="text-dark-charcoal p-4 align-baseline">
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}
                                         </TableCell>
                                     ))}

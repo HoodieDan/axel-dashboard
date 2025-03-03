@@ -22,7 +22,7 @@ export default function BaseTableSortOptions<TData>({ table }: IBaseTableSortOpt
                     variant="outline"
                     role="combobox"
                     size="sm"
-                    className="bg-transparent hover:bg-transparent text-primary-0 border-light-silver gap-1"
+                    className="bg-transparent hover:bg-transparent text-primary-0 border-light-silver gap-1 p-0 h-9"
                 >
                     <ChevronsUpDown className="size-4 shrink-0" />
                     <span className="font-normal">Sort</span>

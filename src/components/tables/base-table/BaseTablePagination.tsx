@@ -8,7 +8,7 @@ interface IBaseTablePaginationProps<TData> {
 
 const BaseTablePagination = <TData,>({ table }: IBaseTablePaginationProps<TData>) => {
     return (
-        <div className="flex items-center justify-between w-full">
+        <div className="flex md:flex-row flex-col-reverse md:gap-y-0 gap-y-4 items-center justify-between w-full">
             <p className="whitespace-nowrap text-gunmetal text-sm">
                 Showing page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
             </p>
