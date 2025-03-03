@@ -1,17 +1,21 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import tutorial from "../../assets/images/tutorial-position.png"
+import { welcomeMessage } from '@/components/layouts/userAuth';
 
 const Tutorial: React.FC = () => {
 
     const navigate = useNavigate()
     return (
+        <div className='md:w-10/12 sm:w-3/5 md:h-screen   sm:mx-auto md:flex  flex-col justify-center  overflow-y-hidden gap-3 max-md:pl-0 max-lg:pl-5'>
+            {welcomeMessage()}
         <div className='flex justify-center items-center mt-0 flex-col'>
        <p className='text-[#667085] font-[Montserrat] -mt-3 mb-8'>A tutorial walkthrough video by AI Jacqueleen</p>
        <div className='my-4'>
         <img src={tutorial} alt="tutorial" />
        </div>
-       <button onClick={()=> navigate("/dashboard/user")} className='font-[Montserrat] w-full md:max-w-[360px]'>Finish up</button>
+       <button onClick={()=> navigate("../../dashboard/user")} className='font-[Montserrat] w-full lg:max-w-[360px]'>Finish up</button>
+        </div>
         </div>
 
     );

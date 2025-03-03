@@ -7,6 +7,7 @@ import practiceBg from '../../../assets/images/jpegs/practice-bg.png';
 import SemiCircleProgress from '../../../components/dashboard/SemiCircleProgress';
 import SegmentedProgressBar from '../../../components/dashboard/SegmentedProgressBar';
 import LineChart from '../../../components/dashboard/LineChart';
+import MultiStepAgreement from '@/components/dashboard/agreementModal/modal';
 
 const UserDashboardHome: React.FC = () => {
 
@@ -120,6 +121,7 @@ const UserDashboardHome: React.FC = () => {
 
     return (
         <div className='user__dashboard__index'>
+        <MultiStepAgreement />    
             <p className='independence mb-5'>You’re making progress! Pick up where you left off</p>
 
             {/* cards */}
