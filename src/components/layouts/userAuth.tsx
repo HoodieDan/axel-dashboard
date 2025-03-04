@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux"; // Import Redux hooks
+import { useSelector} from "react-redux"; // Import Redux hooks
 import { RootState } from "../../store/index"; // Adjust the path as needed
 import { Outlet, useLocation, Link } from "react-router-dom";
 import authPageImage from "../../assets/images/authPage-image.png";
@@ -27,12 +27,10 @@ export function welcomeMessage() {
   )
 }
 const UserPlan = () => {
-  const dispatch = useDispatch(); // Initialize useDispatch
   const location = useLocation()
 
   console.log(location.pathname)
   // Get values from Redux store
-  const questions = useSelector((state: RootState) => state.auth.questions);
   const topicQuestion = useSelector((state: RootState) => state.auth.topicQuestion);
   const content = useSelector((state: RootState) => state.auth.content);
 

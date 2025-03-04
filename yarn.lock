@@ -1216,10 +1216,12 @@
   resolved "https://registry.yarnpkg.com/@types/statuses/-/statuses-2.0.5.tgz#f61ab46d5352fd73c863a1ea4e1cef3b0b51ae63"
   integrity sha512-jmIUGWrAiwu3dZpxntxieC+1n/5c3mjrImkmOSQ2NC5uP6cYO4aAZDdSmRcI5C1oiTmqlZGHC+/NmJrKogbP5A==
 
-"@types/swiper@^5.4.3":
-  version "5.4.3"
-  resolved "https://registry.yarnpkg.com/@types/swiper/-/swiper-5.4.3.tgz#a1420bd9737626e630bb116d711efde34f5b9e99"
-  integrity sha512-hJXpVeANf+XQXgbvmuFZdsnaSOKqOEZcaLDnHhZOJDRow+lfboatwubW+Ay9XiHobMGyEomkgpXSYRlDVn4gMQ==
+"@types/swiper@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@types/swiper/-/swiper-6.0.0.tgz#9934ecd569611b660a2a9bf200f25ce5ba4b4d63"
+  integrity sha512-QPZRgxZ+ivXXtzV43B3LxpXUIC7FE/EoKM+rtxngmgt2M7eeUYypZhyqZD8UxJtlBcUDw/ATGoVeSNpvBBrz2w==
+  dependencies:
+    swiper "*"
 
 "@types/tough-cookie@^4.0.5":
   version "4.0.5"
@@ -3082,10 +3084,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-swiper@^11.2.4:
-  version "11.2.4"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-11.2.4.tgz#4d1b55e07f909957e0406bdbff81b850b9dc8aeb"
-  integrity sha512-DTtglrsFfMYytid+oNy4QI3t2N2+XhhwSYbnyOhlwBmvY8Bkoj3ombK1/b80w8vDpQ+Lqlnbm+0737+i32MrcA==
+swiper@*, swiper@^11.2.5:
+  version "11.2.5"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-11.2.5.tgz#8168b85ff858773e674823acb8962a1c5cdee689"
+  integrity sha512-nG0kbIyBfeE2BPFt9nPUX03qUBF75o6+enzjIT/DfCmbh8ORlwhc4eZz1+4H/yseAgb3H+OoEYzmb64i0tYNnQ==
 
 tailwind-merge@^3.0.2:
   version "3.0.2"
