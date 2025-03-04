@@ -2,12 +2,10 @@ import React from 'react';
 import { setSignupFlow } from "../../store/slices/authSlice";
 import { useDispatch} from "react-redux";
 import { useNavigate } from 'react-router-dom';
-// import { RootState } from "../../store/index";
 
 const Confirmation: React.FC = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate()
-    // const signupFlow = useSelector((state: RootState) => state.auth.signupFlow);
     const handleResendLink = () => {
     };
 

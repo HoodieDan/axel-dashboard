@@ -1,18 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-// Define the structure for the questions
 interface Question {
   id: number;
   question: string;
   content: { contentId: number; plan?: string; role?: string }[];
 }
 
-// Define the state structure
 interface AuthState {
   questions: Question[];
   topicQuestion: string;
   content: string; // New state property
   signupFlow: string,
+  routeFromLogin: boolean
 }
 
 const initialState: AuthState = {
@@ -40,9 +39,10 @@ const initialState: AuthState = {
       ],
     },
   ],
-  topicQuestion: "What do you plan on doing?", // Initial value for topicQuestion
-  content: "", // Initial value for content
+  topicQuestion: "What do you plan on doing?", 
+  content: "login", 
   signupFlow: "signup",
+  routeFromLogin: false,
 };
 
 const authSlice = createSlice({
@@ -58,8 +58,11 @@ const authSlice = createSlice({
     setSignupFlow: (state, action: PayloadAction<string>) => {
       state.signupFlow = action.payload;
     },
+    setRouteFromLogin: (state, action: PayloadAction<boolean>)=>{
+      state.routeFromLogin = action.payload
+    },
   },
 });
 
-export const { setTopicQuestion, setContent, setSignupFlow } = authSlice.actions;
+export const { setTopicQuestion, setContent, setSignupFlow, setRouteFromLogin } = authSlice.actions;
 export default authSlice.reducer;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-// import { RootState } from "../../store/index";
+import { useDispatch,  } from "react-redux";
 import { setContent } from "../../store/slices/authSlice";
 
 const ResetPassword: React.FC = () => {
@@ -11,7 +10,6 @@ const ResetPassword: React.FC = () => {
       const [showPassword, setShowPassword] = useState(false);
       const [showConfirmPassword, setShowConfirmPassword] = useState(false);
       const dispatch = useDispatch();
-    //   const content = useSelector((state: RootState) => state.auth.content);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -24,7 +22,6 @@ const ResetPassword: React.FC = () => {
         // Example: await resetPassword(email, password);
 
           dispatch(setContent("login"));
-        // navigate('../login');
     };
 
     return (
@@ -40,7 +37,7 @@ const ResetPassword: React.FC = () => {
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter new password"
                 id="password"
-                className="rounded-[20px] font-[Inter] h-[60px] md:h-[50px] pr-12 border text-black border-[#d0d5dd] w-full"
+                className="rounded-[20px] font-[Inter] py-5 md:py-[17px] pr-12 border text-black border-[#d0d5dd] w-full"
                 required
                 value={password}
                 onChange={(e)=> setPassword(e.target.value)}
@@ -57,7 +54,7 @@ const ResetPassword: React.FC = () => {
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="Confirm new password"
-                className="rounded-[20px] font-[Inter] pr-12 w-full text-black h-[60px] md:h-[50px] border-[#d0d5dd]"
+                className="rounded-[20px] font-[Inter] pr-12 w-full text-black py-5 md:py-[17px] border-[#d0d5dd]"
                 id="confirmPassword"
                 required
                 value={confirmPassword}
@@ -74,7 +71,7 @@ const ResetPassword: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="text-white lg:w-[360px] font-[Inter] h-[60px] md:h-[50px] max-md:w-full rounded-[20px] "
+            className="text-white lg:w-full font-[Inter] py-5 md:py-[17px] max-md:w-full rounded-[20px] "
           >
             Reset password
           </button>
