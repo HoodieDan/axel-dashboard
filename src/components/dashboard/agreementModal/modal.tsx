@@ -111,7 +111,7 @@ const MultiStepAgreement = () => {
       <Dialog.Portal >
         <Dialog.Overlay className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm" />
         <Dialog.Content
-          className={`fixed top-1/2 left-1/2 z-[100]  w-[315px]  ${currentStep === 1 ? "md:w-[50vw]" : "md:w-[60vw]" } h-min mx-auto  max-md:h-[500px] ax-md:h-fit bg-white p-5 pt-0 rounded-lg shadow-lg transform -translate-x-1/2 -translate-y-1/2`}
+          className={`fixed top-1/2 left-1/2 z-[100]  w-[315px]  ${currentStep === 1 ? "md:w-[50vw]" : "md:w-[60vw]" } h- overflow-scroll mx-auto  max-md:h-mi ax-md:h-fit bg-white p-5 pt-0 rounded-lg shadow-lg transform -translate-x-1/2 -translate-y-1/2`}
         >
           {/* <h2 className="text-xl font-bold mb-4 text-center">User Agreement</h2> */}
 
@@ -119,13 +119,13 @@ const MultiStepAgreement = () => {
           <Swiper
             modules={[Pagination]}
             pagination={{ clickable: false }}
-            className={`pb-8  mt-4 ${
-            currentStep === 1 ? "md:w-[ max-md:h-[420px] md:max-h-[40vh]" : "  w-full max-md:h-[420px "
+            className={`pb-8 max-sm:text-md  my-0 mt-4 ${
+            currentStep === 1 ? "md:w-[ max-md:h-[420px] md:max-h-[40vh]" : "  w-full max-md:h-fit "
           } font-[Montserrat]`}
             allowTouchMove={false} // Prevents swiping, only Next/Back buttons work
             onSwiper={(swiper) => setSwiper(swiper)}
           >
-            <SwiperSlide className="flex flex-col w-full gap-2">
+            <SwiperSlide className="flex flex-col w-full my-0 gap-2">
                 <img
                   src={modalFirstImage}
                   className="w-full"

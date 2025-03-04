@@ -7,14 +7,14 @@ import practiceBg from "../../../assets/images/jpegs/practice-bg.png";
 import SemiCircleProgress from "../../../components/dashboard/SemiCircleProgress";
 import SegmentedProgressBar from "../../../components/dashboard/SegmentedProgressBar";
 import LineChart from "../../../components/dashboard/LineChart";
-// import MultiStepAgreement from "@/components/dashboard/agreementModal/modal";
-// import { useSelector } from "react-redux";
-// import { RootState } from "@/store";
+import MultiStepAgreement from "@/components/dashboard/agreementModal/modal";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 const UserDashboardHome: React.FC = () => {
-//   const routeFromLogin = useSelector(
-//     (state: RootState) => state.auth.routeFromLogin
-//   );
+  const routeFromLogin = useSelector(
+    (state: RootState) => state.auth.routeFromLogin
+  );
 
   const score = 89;
 
@@ -237,7 +237,7 @@ const UserDashboardHome: React.FC = () => {
 
   return (
     <div className="user__dashboard__index">
-      {/* {routeFromLogin === false && <MultiStepAgreement />} */}
+      {routeFromLogin === false && <MultiStepAgreement />}
       {/* {<MultiStepAgreement />} */}
       <p className="independence mb-5">
         You’re making progress! Pick up where you left off
