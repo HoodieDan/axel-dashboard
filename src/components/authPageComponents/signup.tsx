@@ -113,12 +113,12 @@ const Signup: React.FC = () => {
                     <Input
                       type={showPassword ? "text" : "password"}
                       placeholder="Enter your password"
-                      className="rounded-[20px] font-[Montserrat] py-5 md:py-[23px] pr-12 border text-black border-[#d0d5dd] active:border w-full"
+                      className="rounded-[20px]  font-[Montserrat] py-5 md:py-[23px] pr-12 border text-black border-[#d0d5dd] active:border w-full"
                       {...field}
                     />
                     <Button
                       type="button"
-                      className="absolute right-1 shadow-none top-1/2 bg-transparent text-[#b7b7b7] border-none outline-0 transform -translate-y-1/2"
+                      className="absolute right-1 shadow-none top-1/2 hover:bg-none bg-transparent text-[#b7b7b7] border-none outline-0 transform -translate-y-1/2"
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -146,7 +146,7 @@ const Signup: React.FC = () => {
                     />
                     <Button
                       type="button"
-                      className="absolute shadow-none right-1 top-1/2 bg-transparent text-[#b7b7b7] transform -translate-y-1/2"
+                      className="absolute shadow-none hover:bg-none right-1 top-1/2 bg-transparent text-[#b7b7b7] transform -translate-y-1/2"
                       onClick={() =>
                         setShowConfirmPassword(!showConfirmPassword)
                       }
@@ -200,7 +200,7 @@ const Signup: React.FC = () => {
             dispatch(setContent("login"));
             navigate("../login");
           }}
-          className="font-semibold bg-transparent text-black w-fit p-0"
+          className="font-semibold bg-transparent hover:bg-none text-black w-fit p-0"
         >
           Log in
         </Button>

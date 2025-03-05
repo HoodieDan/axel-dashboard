@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import cardFlower from "../../../assets/images/svgs/card-flower.svg";
 import speakingBg from "../../../assets/images/jpegs/speaking-bg.jpeg";
@@ -15,6 +15,11 @@ const UserDashboardHome: React.FC = () => {
   const routeFromLogin = useSelector(
     (state: RootState) => state.auth.routeFromLogin
   );
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+
+  const handleClose = () => {
+    setIsModalOpen(false); 
+  };
 
   const score = 89;
 
@@ -237,8 +242,10 @@ const UserDashboardHome: React.FC = () => {
 
   return (
     <div className="user__dashboard__index">
-      {routeFromLogin === false && <MultiStepAgreement />}
-      {/* {<MultiStepAgreement />} */}
+      {routeFromLogin === false && (
+        <MultiStepAgreement open={isModalOpen} onClose={handleClose} />
+      )}
+
       <p className="independence mb-5">
         You’re making progress! Pick up where you left off
       </p>
@@ -348,7 +355,7 @@ const UserDashboardHome: React.FC = () => {
               <p className="mb-3">5 goals completed</p>
               <h2 className="mb-3">4/5</h2>
               <p className="gunmetal text-center">
-                Yeh! you’ve achieved most of your goals
+                Yeh! you've achieved most of your goals
               </p>
             </div>
 

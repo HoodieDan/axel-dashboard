@@ -79,12 +79,12 @@ const Login: React.FC = () => {
                     <Input
                       type={showPassword ? "text" : "password"}
                       placeholder="Enter your password"
-                      className="rounded-[20px] font-[Montserrat] py-5 md:py-[23px] pr-12 border text-black outline-0 border-[#d0d5dd] shadow-0 focus:outline-0  focus:border-0    w-full"
+                      className="rounded-[20px] font-[Inter] py-5 md:py-[23px] pr-12 border text-black outline-0 border-[#d0d5dd] shadow-0 focus:outline-0  focus:border-0    w-full"
                       {...field}
                     />
                     <Button
                       type="button"
-                      className="absolute  right-1 top-1/2 bg-transparent rounded-none shadow-none text-[#b7b7b7]  transform -translate-y-1/2"
+                      className="absolute  right-1 top-1/2 bg-transparent hover:bg-none rounded-none shadow-none text-[#b7b7b7]  transform -translate-y-1/2"
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -96,7 +96,7 @@ const Login: React.FC = () => {
             )}
           />
 
-          <Button type="submit" className="py-5 md:py-[23px] rounded-[20px]">
+          <Button type="submit" className="py-5 md:py-[23px] font-[Inter] rounded-[20px]">
             Login
           </Button>
         </form>
@@ -121,7 +121,7 @@ const Login: React.FC = () => {
           onClick={() => {
             dispatch(setContent("forgot password"));
           }}
-          className="font-semibold bg-transparent shadow-none p-0 text-sm text-[#262b3a]"
+          className="font-semibold hover:bg-none bg-transparent shadow-none p-0 text-sm text-[#262b3a]"
         >
           Forgot Password
         </Button>
@@ -135,7 +135,7 @@ const Login: React.FC = () => {
               dispatch(setContent("signup"));
               navigate("../signup");
             }}
-            className="text-[#262b3a] shadow-none font-semibold bg-transparent p-0"
+            className="text-[#262b3a] hover:bg-none shadow-none font-semibold bg-transparent p-0"
           >
             Sign up
           </Button>

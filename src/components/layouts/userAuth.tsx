@@ -1,5 +1,3 @@
-import { useSelector} from "react-redux"; // Import Redux hooks
-import { RootState } from "../../store/index"; // Adjust the path as needed
 import { Outlet, useLocation, Link } from "react-router-dom";
 import authPageImage from "../../assets/images/authPage-image.png";
 import engageLogo from "../../assets/images/engage-x-logo.png";
@@ -7,7 +5,6 @@ import engageLogo from "../../assets/images/engage-x-logo.png";
 
 export function welcomeMessage() {
   const location = useLocation()
-  console.log(location.pathname)
 
   return(
     <div className="font-[Neue Montreal] max-sm:mt-10 text-center pb-5">
@@ -15,7 +12,7 @@ export function welcomeMessage() {
               Welcome to
               <img
                 src={engageLogo}
-                className="md:w-[190px] max-lg:w-[11vw] max-md:w-[130px] mt-1 md:mt-3 h-[29.3px] md:h-[3.12vw]"
+                className="md:w-[190px] max-sm:mt-2 max-lg:w-[11vw] max-md:w-[130px] mt-1 md:mt-3 h-[29.3px] md:h-[3.12vw]"
                 alt="engage-x-logo"
               />
             </h1>
@@ -29,10 +26,6 @@ export function welcomeMessage() {
 const UserPlan = () => {
   const location = useLocation()
 
-  console.log(location.pathname)
-  // Get values from Redux store
-  const topicQuestion = useSelector((state: RootState) => state.auth.topicQuestion);
-  const content = useSelector((state: RootState) => state.auth.content);
 
 
   
@@ -40,7 +33,7 @@ const UserPlan = () => {
   return (
     <div className="md:h-screen h-full md:overflow-y-hidden  lg:px-10 md:px-0 p-5 max-lg:py-0 max-lg:justify-between max-md:block   max-lg:flex-row justify-center lg:justify-start md:flex-row flex-col flex gap-5">
       <div className="auth flex-1 lg:flex-[0.9] py-5">
-        {topicQuestion === "What do you plan on doing?" && content === "" && (
+        {location.pathname === "/auth" && (
           <Link
             to="/"
             className="w-fit flex h-[30px] md:hidden items-center rounded-3xl gap-2 py-6 px-5 bg-gradient-to-br from-[#c6c6c247] to-[#feeedd25] bg-slate-10 g-transparent text-black"
