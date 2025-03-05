@@ -1,8 +1,8 @@
 import React from 'react';
-import LineChart from '../../../components/dashboard/LineChart';
-import MultiAreaChart from '../../../components/dashboard/MultiAreaChart';
-import RecentSessions from '../../../components/dashboard/RecentSessions';
-import DonutChart from '@/components/dashboard/DonutChart';
+import ShadLineChart from '../../../components/dashboard/ShadLineChart';
+import ShadAreaChart from '@/components/dashboard/ShadAreaChart';
+import RecentSessions from '../../../components/dashboard/RecentSessionsTable';
+import ShadDonutChart from '@/components/dashboard/ShadDonutChart';
 
 const AdminDashboardHome: React.FC = () => {
 
@@ -55,37 +55,44 @@ const AdminDashboardHome: React.FC = () => {
         },
     ]
 
-    const labels = ["10 Feb", "11 Feb", "12 Feb", "13 Feb", "14 Feb", "15 Feb", "16 Feb"];
-
-    const datasets = [
-        {
-            label: "Pitch",
-            data: [9, 12, 12, 12, 16.5, 15, 15],
-            color: "#252A39",
-        },
-        {
-            label: "Presentation",
-            data: [8, 9, 4.5, 4.7, 7.5, 7, 7],
-            color: "#40B869",
-        },
-        {
-            label: "Keynote",
-            data: [0, 2, 6, 5, 15, 4, 3.5],
-            color: "#F5B546",
-        },
+    const lineChartData = [
+        { month: "January", Pitch: 186, Presentation: 80, Keynote: 90 },
+        { month: "February", Pitch: 305, Presentation: 200, Keynote: 100 },
+        { month: "March", Pitch: 237, Presentation: 120, Keynote: 100 },
+        { month: "April", Pitch: 73, Presentation: 190, Keynote: 100 },
+        { month: "May", Pitch: 209, Presentation: 130, Keynote: 100 },
+        { month: "June", Pitch: 214, Presentation: 140, Keynote: 100 },
     ];
+      
+    const lineChartColors = {
+        Pitch: "#252A39",
+        Presentation: "#40B869",
+        Keynote: "#F5B546",
+    };
 
-    const seriesData = [
-        { name: "Current Week", data: [5, 10, 15, 25, 18, 14, 10] },
-        { name: "Previous Week", data: [3, 8, 12, 20, 15, 10, 7], dashArray: 5 },
+    const areaChartData = [
+        { month: "January", currentWeek: 186, previousWeek: 80 },
+        { month: "February", currentWeek: 305, previousWeek: 200 },
+        { month: "March", currentWeek: 237, previousWeek: 120 },
+        { month: "April", currentWeek: 73, previousWeek: 190 },
+        { month: "May", currentWeek: 209, previousWeek: 130 },
+        { month: "June", currentWeek: 214, previousWeek: 140 },
     ];
-    
-    const categoriesData = ["10 Feb", "11 Feb", "12 Feb", "13 Feb", "14 Feb", "15 Feb", "16 Feb"];
+      
+    const areaChartColors = {
+        currentWeek: "#F5B546",
+        previousWeek: "#F8DFC3",
+    };
 
-    const donutData = [
-        { name: "Users", data: [908, 92] }
+    const donutChartData = [
+        { name: "ActiveUsers", value: 908, fill: "#252A39" },
+        { name: "InactiveUsers", value: 92, fill: "#B9BCC8" },
     ];
-    const donutCategories = ["Active Users", "Inactive Users"];
+      
+    const donutChartColors = {
+        ActiveUsers: "#252A39",
+        InactiveUsers: "#B9BCC8",
+    };
 
     return (
         <div className='admin__dashboard__index py-3'>
@@ -136,7 +143,7 @@ const AdminDashboardHome: React.FC = () => {
                             </div>
                         </div>
                         <div className="chart__div flex-1">
-                            <LineChart labels={labels} datasets={datasets} />
+                            <ShadLineChart data={lineChartData} colors={lineChartColors} />
                         </div>
                     </div>
                 </div>
@@ -155,7 +162,7 @@ const AdminDashboardHome: React.FC = () => {
                             </div>
                         </div>
                         <div className="chart__div flex-1">
-                            <MultiAreaChart series={seriesData} categories={categoriesData} />
+                            <ShadAreaChart data={areaChartData} colors={areaChartColors} />
                         </div>
                     </div>
                 </div>
@@ -175,8 +182,8 @@ const AdminDashboardHome: React.FC = () => {
                             <small className="underline cursor-pointer">View All</small>
                         </div>
                         <div className="w-full h-auto donut__chart">
-                            <div className="h-60 mb-3">
-                                <DonutChart series={donutData} categories={donutCategories} />
+                            <div className="h-auto mb-3">
+                                <ShadDonutChart data={donutChartData} colors={donutChartColors} />
                             </div>
 
                             <div className="donut__details p-3">
@@ -184,7 +191,7 @@ const AdminDashboardHome: React.FC = () => {
                                 {/* total users  */}
                                 <div className="flex justify-between items-center mb-2.5">
                                     <div className="flex gap-2 items-center">
-                                        <h4 className='gunmetal'>{donutData[0].data.reduce((acc, value) => acc + value, 0)}</h4>
+                                        <h4 className='gunmetal'>1024</h4>
                                         <p className='auro__metal'>Total Users</p>
                                     </div>
                                     <div className="flex items-center me-2">
@@ -202,7 +209,7 @@ const AdminDashboardHome: React.FC = () => {
                                         <p className='auro__metal'>Active Users</p>
                                     </div>
                                     <div className="flex items-center me-2">
-                                        <p className='gunmetal'>{ donutData[0].data[0] }</p>
+                                        <p className='gunmetal'>908</p>
                                     </div>
                                 </div>
 
@@ -213,7 +220,7 @@ const AdminDashboardHome: React.FC = () => {
                                         <p className='auro__metal'>Inactive Users</p>
                                     </div>
                                     <div className="flex items-center me-2">
-                                        <p className='gunmetal'>{ donutData[0].data[1] }</p>
+                                        <p className='gunmetal'>92</p>
                                     </div>
                                 </div>
                             </div>

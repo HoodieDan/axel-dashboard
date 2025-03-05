@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../../assets/images/svgs/logo.svg';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader } from '../ui/sidebar';
+import { Input } from '../ui/input';
+// import { NavMain } from './nav-main';
 
 const SideNav: React.FC = () => {
     const location = useLocation();
-    const lastSegment = location.pathname.split('/').splice(2, 1)[0];
+    const pathSegments = location.pathname.split('/').filter(Boolean);
+    const lastSegment = pathSegments.length >= 2 ? pathSegments[1] : '';
     
     const userLinks = [
         { 
@@ -118,69 +122,68 @@ const SideNav: React.FC = () => {
     ];
 
     return (
-        <nav className="side__nav py-7 px-5 relative">
-            <div className="logo__div mb-6">
-                <img src={logo} alt="EngageX Logo" className='logo' />
-            </div>
+        <Sidebar className="side__nav py-5 px-4">
+            <SidebarHeader className="py-7 lg:py-3 px-4">
+                <img src={logo} alt="EngageX Logo" className='w-8/12 px-3 lg:px-0' />
+            </SidebarHeader>
+
+            <SidebarContent className='top__links lg:px-0 px-4'>
             
-            <div className="search__div w-full relative my-4">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className='absolute left-2' width="24" height="24" color="#BDBDBD" fill="none">
-                    <path d="M17.5 17.5L22 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-                </svg>
-                <input type="text" placeholder='Search' className='ps-8 py-2 rounded-[4px]' />
-            </div>
-
-            <div className="links w-full flex flex-col justify-between h-full">
-                <div className="top__links w-full">
-                    {lastSegment === 'user' && userLinks.map((link, index) => (
-                        <Link 
-                            to={link.path} 
-                            key={index} 
-                            className={`link flex items-center w-full py-2 px-3 mb-3 ${
-                                location.pathname === link.path ? 'active' : ''
-                            }`}
-                        >
-                            {link.icon}
-                            <p>
-                                {link.name}
-                            </p>
-                        </Link>
-                    ))}
-                    {lastSegment === 'admin' && adminLinks.map((link, index) => (
-                        <Link 
-                            to={link.path} 
-                            key={index} 
-                            className={`link flex items-center w-full py-2 px-3 mb-3 ${
-                                location.pathname === link.path ? 'active' : ''
-                            }`}
-                        >
-                            {link.icon}
-                            <p>
-                                {link.name}
-                            </p>
-                        </Link>
-                    ))}
+                <div className="relative my-4 mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className='absolute left-2 top-1 w-4.5 aspect-square' width="24" height="24" color="#BDBDBD" fill="none">
+                        <path d="M17.5 17.5L22 22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M20 11C20 6.02944 15.9706 2 11 2C6.02944 2 2 6.02944 2 11C2 15.9706 6.02944 20 11 20C15.9706 20 20 15.9706 20 11Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                    </svg>
+                    <Input type="text" tabIndex={-1} placeholder='Search' className='ps-8 py-3 lg:py-2 rounded-[4px]' />
                 </div>
 
-                <div className="bottom__links w-full">
-                    {bottomLinks.map((link, index) => (
-                        <Link 
-                            to={link.path} 
-                            key={index} 
-                            className={`link flex items-center w-full py-2 px-3 mb-3 ${
-                                location.pathname === link.path ? 'active' : ''
-                            }`}
-                        >
-                            {link.icon}
-                            <p>
-                                {link.name}
-                            </p>
-                        </Link>
-                    ))}
-                </div>
-            </div>
-        </nav>
+                {lastSegment === 'user' && userLinks.map((link, index) => (
+                    <Link 
+                        to={link.path} 
+                        key={index} 
+                        className={`link flex items-center w-full py-2 px-3 mb-0.5 text-white ${
+                            location.pathname === link.path ? 'active' : ''
+                        }`}
+                    >
+                        {link.icon}
+                        <p>
+                            {link.name}
+                        </p>
+                    </Link>
+                ))}
+                {lastSegment === 'admin' && adminLinks.map((link, index) => (
+                    <Link 
+                        to={link.path} 
+                        key={index} 
+                        className={`link flex items-center w-full py-2 px-3 mb-0.5 text-white ${
+                            location.pathname === link.path ? 'active' : ''
+                        }`}
+                    >
+                        {link.icon}
+                        <p>
+                            {link.name}
+                        </p>
+                    </Link>
+                ))}
+            </SidebarContent>
+
+            <SidebarFooter className="bottom__links w-full px-4">
+                {bottomLinks.map((link, index) => (
+                    <Link 
+                        to={link.path} 
+                        key={index} 
+                        className={`link flex items-center w-full py-2 px-1 mb-0.5 text-white ${
+                            location.pathname === link.path ? 'active' : ''
+                        }`}
+                    >
+                        {link.icon}
+                        <p>
+                            {link.name}
+                        </p>
+                    </Link>
+                ))}
+            </SidebarFooter>
+        </Sidebar>
     );
 };
 
