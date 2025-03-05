@@ -25,12 +25,12 @@ const ResetPassword: React.FC = () => {
     };
 
     return (
-        <div className="forgot-password-container md:w-10/12 sm:w-3/5  sm:mx-auto flex flex-col justify-center h-screen overflow-y-hidden max-md:pl-0 gap-3 max-lg:pl-5">
+        <div className="forgot-password-container md:w-10/12 sm:w-3/5  sm:mx-auto flex flex-col justify-center h-screen overflow-y-hidden  max-md:pl-0 gap-3 max-lg:pl-5">
         <h2 className="text-[30px] text-center font-medium">Reset Password</h2>
         <p className="text-center font-[Inter] text-[#667085]">
           Your new password must be different from <br /> the previous one.
         </p>
-        <form className="max-md:w-full flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form className="max-md:w-full sm:w-[75%] sm:mx-auto flex flex-col gap-4" onSubmit={handleSubmit}>
           <div className="form-group max-md:w-full flex-col flex gap-3">
             <div className="relative">
               <input

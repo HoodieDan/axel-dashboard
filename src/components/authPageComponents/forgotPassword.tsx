@@ -27,7 +27,6 @@ const ForgotPassword: React.FC = () => {
   const onSubmit: SubmitHandler<ForgotPasswordFormValues> = async (data) => {
     console.log("Form Data:", data);
 
-    console.log("Updating content to 'reset password'");
 
     dispatch(setContent("reset password"));
   };
@@ -39,7 +38,7 @@ const ForgotPassword: React.FC = () => {
         We got you. Enter your email to get a link to <br /> reset your password.
       </p>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full sm:w-[75%] sm:mx-auto">
           <FormField
             control={form.control}
             name="email"

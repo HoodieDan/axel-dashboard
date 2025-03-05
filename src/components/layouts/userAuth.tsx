@@ -12,11 +12,11 @@ export function welcomeMessage() {
               Welcome to
               <img
                 src={engageLogo}
-                className="md:w-[190px] max-sm:mt-2 max-lg:w-[11vw] max-md:w-[130px] mt-1 md:mt-3 h-[29.3px] md:h-[3.12vw]"
+                className="w-auto max-sm:mt-2  mt-2 lg:mt-3 h-[29.3px] md:h-[3.12vw]"
                 alt="engage-x-logo"
               />
             </h1>
-           { location.pathname !== "/auth/Tutorial" && <p className="text-3xl text-center bg-gradient-to-b from-[#1f1f1fdd] to-[#C0C0C0] bg-clip-text text-transparent">
+           { location.pathname !== "/auth/Tutorial" && <p className="bigger text-center bg-gradient-to-b from-[#1f1f1fdd] to-[#C0C0C0] bg-clip-text mt-2 text-transparent">
                 AI-powered public speaking and <br />{" "}
                 <span className="">presentation training platform</span>
               </p>}
@@ -50,7 +50,7 @@ const UserPlan = () => {
                 fill="black"
               />
             </svg>
-            <p className="text-lg font-[Neue Montreal]">Back to website</p>
+            <p className="text-lg font-normal font-[Neue Montreal]">Back to website</p>
           </Link>
         )}
         <div className="text-black h-full w-full ">

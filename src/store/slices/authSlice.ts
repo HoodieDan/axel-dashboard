@@ -6,12 +6,24 @@ interface Question {
   content: { contentId: number; plan?: string; role?: string }[];
 }
 
+interface SignupData {
+  fullName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  planQuestion: string;
+  roleQuestion: string;
+
+}
+
+
 interface AuthState {
   questions: Question[];
   topicQuestion: string;
-  content: string; // New state property
-  signupFlow: string,
-  routeFromLogin: boolean
+  content: string;
+  signupFlow: string;
+  routeFromLogin: boolean;
+  signupData: SignupData | null;
 }
 
 const initialState: AuthState = {
@@ -39,11 +51,13 @@ const initialState: AuthState = {
       ],
     },
   ],
-  topicQuestion: "What do you plan on doing?", 
-  content: "login", 
-  signupFlow: "signup",
+  topicQuestion: "What do you plan on doing?",
+  content: "login",
+  signupFlow: "authQuestions",
   routeFromLogin: false,
+  signupData: null, // Stores signup details
 };
+
 
 const authSlice = createSlice({
   name: "auth",
@@ -58,11 +72,16 @@ const authSlice = createSlice({
     setSignupFlow: (state, action: PayloadAction<string>) => {
       state.signupFlow = action.payload;
     },
-    setRouteFromLogin: (state, action: PayloadAction<boolean>)=>{
-      state.routeFromLogin = action.payload
+    setRouteFromLogin: (state, action: PayloadAction<boolean>) => {
+      state.routeFromLogin = action.payload;
     },
+    setSignupData: (state, action: PayloadAction<Partial<SignupData>>) => {
+      state.signupData = { ...state.signupData!, ...action.payload };
+    },
+    
   },
 });
 
-export const { setTopicQuestion, setContent, setSignupFlow, setRouteFromLogin } = authSlice.actions;
+export const { setTopicQuestion, setContent, setSignupFlow, setRouteFromLogin, setSignupData } =
+  authSlice.actions;
 export default authSlice.reducer;

@@ -4,8 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { setContent, setRouteFromLogin } from "../../store/slices/authSlice";
-import { useNavigate } from "react-router-dom";
+import { setContent, setRouteFromLogin, setSignupFlow } from "../../store/slices/authSlice";
+import { Link, useNavigate } from "react-router-dom";
 import { welcomeMessage } from "../layouts/userAuth";
 import {
   Form,
@@ -50,7 +50,7 @@ const Login: React.FC = () => {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="pt-10  flex flex-col gap-4"
+          className="pt-10 md:w-[75%] md:mx-auto flex flex-col gap-4"
         >
           <FormField
             control={form.control}
@@ -102,7 +102,7 @@ const Login: React.FC = () => {
         </form>
       </Form>
 
-      <section className="flex justify-between items-center pt-0">
+      <section className="flex sm:w-[75%] sm:mx-auto justify-between items-center pt-0">
         <div>
           <label
             className="flex gap-2 justify-start items-center text-sm text-nowrap"
@@ -130,15 +130,14 @@ const Login: React.FC = () => {
       <div className="w-full mt-2">
         <p className="flex items-center text-[#475467] gap-1 justify-center">
           Don't have an account?{" "}
-          <Button
+          <Link to="../"
             onClick={() => {
-              dispatch(setContent("signup"));
-              navigate("../signup");
+              dispatch(setSignupFlow("signup"));
             }}
             className="text-[#262b3a] hover:bg-none shadow-none font-semibold bg-transparent p-0"
           >
             Sign up
-          </Button>
+          </Link>
         </p>
       </div>
     </div>

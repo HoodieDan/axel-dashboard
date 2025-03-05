@@ -8,8 +8,8 @@ import "./styles/index.scss";
 import "./App.css";
 import UserAuth from "./components/layouts/userAuth";
 import AdminDashboardHome from "./pages/Dashboard/Admin/Index";
-import AuthQuestions from "./pages/auth";
-import Signup from "./pages/auth/signup";
+import AuthQuestions from "./components/authPageComponents/authQuestions";
+import Signup from "./pages/auth";
 import Login from "./pages/auth/login";
 import Tutorial from "./pages/auth/tutorial";
 
@@ -31,8 +31,7 @@ function App() {
 
           {/* Signup flow */}
           <Route path="/auth" element={<UserAuth />}>
-            <Route index element={<AuthQuestions />} />
-            <Route path="signup" element={<Signup />} />
+            <Route index element={<Signup />} />
             <Route path="login" element={<Login />} />
             <Route path="tutorial" element={<Tutorial />} />
           </Route>
