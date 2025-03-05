@@ -97,7 +97,6 @@ export default function MultiStepAgreement({
             }}
             >
           <DialogTitle> 
-          {/* <p>sfdf</p> */}
           </DialogTitle>
             <DialogContent
             aria-describedby={undefined}
@@ -502,7 +501,7 @@ function StepSix({
                 Upload your picture for easy identification.
             </p>
             <div className="relative w-full overflow-hidden rounded-lg h-[40vh] md:h-72">
-                {filePreview && ( // Use filePreview prop
+                {filePreview && ( 
                     <img
                         src={filePreview} // Use filePreview prop
                         className="absolute inset-0 w-full h-full object-cover"

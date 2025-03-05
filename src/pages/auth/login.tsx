@@ -7,12 +7,11 @@ import ResetPassword from "@/components/authPageComponents/resetPassword";
 const AuthPage: React.FC = () => {
   const content = useSelector((state: RootState) => state.auth.content); // Get content from Redux store
 
-
   return (
     <div>
-      {content === "login" && <Login />} {/* Render Login by default */}
-      {content === "forgot password" && <ForgotPassword />} {/* Render ForgotPassword when content is "forgot password" */}
-      {content === "reset password"  && <ResetPassword />}
+      {content === "login" && <Login />}
+      {content === "forgot password" && <ForgotPassword />}{" "}
+      {content === "reset password" && <ResetPassword />}
     </div>
   );
 };

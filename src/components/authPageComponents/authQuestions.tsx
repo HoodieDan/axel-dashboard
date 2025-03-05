@@ -6,7 +6,6 @@ import {
   setSignupData,
   setSignupFlow,
 } from "../../store/slices/authSlice";
-import { useLocation } from "react-router-dom"; // Import useNavigate
 import { welcomeMessage } from "@/components/layouts/userAuth";
 
 const AuthQuestions: React.FC = () => {
@@ -14,21 +13,14 @@ const AuthQuestions: React.FC = () => {
     plan?: string;
     role?: string;
   }>({});
-  const signupData = useSelector((state:RootState)=> state.auth.signupData)
+  const signupData = useSelector((state: RootState) => state.auth.signupData);
 
   const dispatch = useDispatch();
-  // const navigate = useNavigate(); // Initialize useNavigate
-  const location = useLocation();
 
-  // Get values from Redux store
   const questions = useSelector((state: RootState) => state.auth.questions);
   const topicQuestion = useSelector(
     (state: RootState) => state.auth.topicQuestion
   );
-
-  //  useEffect(() => {
-  //     setContent("");
-  //   }, [location.pathname === "/auth/signup"]);
 
   const filteredQuestions = questions.filter(
     (question) => question.question === topicQuestion
@@ -51,7 +43,8 @@ const AuthQuestions: React.FC = () => {
 
         // Save to Redux state (signupData.planQuestion)
         dispatch(
-          setSignupData({...signupData,
+          setSignupData({
+            ...signupData,
             planQuestion: selectedOption.plan || "",
           })
         );
@@ -64,7 +57,8 @@ const AuthQuestions: React.FC = () => {
 
         // Save to Redux state (signupData.roleQuestion)
         dispatch(
-          setSignupData({...signupData,
+          setSignupData({
+            ...signupData,
             roleQuestion: selectedOption.role || "",
           })
         );

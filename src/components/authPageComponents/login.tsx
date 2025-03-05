@@ -4,7 +4,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { setContent, setRouteFromLogin, setSignupFlow } from "../../store/slices/authSlice";
+import {
+  setContent,
+  setRouteFromLogin,
+  setSignupFlow,
+} from "../../store/slices/authSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { welcomeMessage } from "../layouts/userAuth";
 import {
@@ -96,7 +100,10 @@ const Login: React.FC = () => {
             )}
           />
 
-          <Button type="submit" className="py-5 md:py-[23px] font-[Inter] rounded-[20px]">
+          <Button
+            type="submit"
+            className="py-5 md:py-[23px] font-[Inter] rounded-[20px]"
+          >
             Login
           </Button>
         </form>
@@ -130,7 +137,8 @@ const Login: React.FC = () => {
       <div className="w-full mt-2">
         <p className="flex items-center text-[#475467] gap-1 justify-center">
           Don't have an account?{" "}
-          <Link to="../"
+          <Link
+            to="../"
             onClick={() => {
               dispatch(setSignupFlow("signup"));
             }}

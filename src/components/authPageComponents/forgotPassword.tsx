@@ -2,9 +2,15 @@ import React from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useDispatch,  } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setContent } from "../../store/slices/authSlice";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -27,7 +33,6 @@ const ForgotPassword: React.FC = () => {
   const onSubmit: SubmitHandler<ForgotPasswordFormValues> = async (data) => {
     console.log("Form Data:", data);
 
-
     dispatch(setContent("reset password"));
   };
 
@@ -35,10 +40,14 @@ const ForgotPassword: React.FC = () => {
     <div className="forgot-password-container px-1 md:w-10/12 sm:w-3/5 h-screen sm:mx-auto   flex flex-col justify-center overflow-y-hidden gap-3 max-md:pl-0 max-lg:pl-5">
       <h2 className="text-[30px] text-center font-medium">Forgot Password?</h2>
       <p className="text-center font-[Inter] text-[#667085]">
-        We got you. Enter your email to get a link to <br /> reset your password.
+        We got you. Enter your email to get a link to <br /> reset your
+        password.
       </p>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="w-full sm:w-[75%] sm:mx-auto">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="w-full sm:w-[75%] sm:mx-auto"
+        >
           <FormField
             control={form.control}
             name="email"

@@ -8,7 +8,6 @@ import "./styles/index.scss";
 import "./App.css";
 import UserAuth from "./components/layouts/userAuth";
 import AdminDashboardHome from "./pages/Dashboard/Admin/Index";
-import AuthQuestions from "./components/authPageComponents/authQuestions";
 import Signup from "./pages/auth";
 import Login from "./pages/auth/login";
 import Tutorial from "./pages/auth/tutorial";
@@ -41,9 +40,6 @@ function App() {
             <Route path="analytics" element={<UserAnalytics />} />
             <Route path="settings" element={<UserSettings />} />
           </Route>
-
-          {/* 404 Page */}
-          {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </Router>
     </>
