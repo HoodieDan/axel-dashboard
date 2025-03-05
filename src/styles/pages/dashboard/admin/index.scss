@@ -21,12 +21,10 @@
     .dash__card {
         box-shadow: 0px 2px 2px 0px #0000001A;
         border: 1px solid $color-bright-gray;
+        background-color: $color-white;
     }
 
     .sessions__number {
-        .mixed__chart {
-            aspect-ratio: 2/1;
-        }
         select {
             color: $color-chinese-black;
             border: 1px solid $color-bright-gray;
@@ -35,6 +33,62 @@
                 border: 1px solid $color-gunmetal;
                 outline: none;
             }
+        }
+    }
+
+    .chart__div {
+        aspect-ratio: 2/1;
+
+        @include media('<tablet') {
+            aspect-ratio: auto;
+        }
+    }
+
+    .shad__table {
+        button {
+            background: transparent;
+            color: $color-chinese-black;
+
+            &[role="checkbox"] {
+                padding: 4px;
+            }
+
+            thead {
+                background-color: $color-ghost-white;
+                color: $color-chinese-black
+            }
+        }
+    }
+
+    .donut__chart {
+        .apexcharts-series {
+            // &[rel="1"] {
+            //     path {
+            //         transform: scale(1.1); /* Increase outer radius */
+            //         transform-origin: center;
+            //     }
+            // }
+            &[rel="2"] {
+                path {
+                    transform: scale(0.8) translate(-0.8vw, -0.6vw);
+                    transform-origin: center;
+
+                    @include media('<phone') {
+                        transform: scale(0.8) translate(-4vw, -3vw);
+                        transform-origin: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .donut__details {
+        .auro__bg {
+            background-color: $color-auro-metal-saurus;
+        }
+
+        .gunmetal__bg {
+            background-color: $color-gunmetal;
         }
     }
 }
