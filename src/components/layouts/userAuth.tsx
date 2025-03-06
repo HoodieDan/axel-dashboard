@@ -1,6 +1,8 @@
 import { Outlet, useLocation, Link } from "react-router-dom";
 import authPageImage from "../../assets/images/authPage-image.png";
 import engageLogo from "../../assets/images/engage-x-logo.png";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
 
 
 export function welcomeMessage() {
@@ -24,16 +26,15 @@ export function welcomeMessage() {
   )
 }
 const UserPlan = () => {
-  const location = useLocation()
 
 
-
+  const signupFlow = useSelector((state: RootState) => state.auth.signupFlow);
   
 
   return (
     <div className="md:h-screen h-full md:overflow-y-hidden  lg:px-10 md:px-0 p-5 max-lg:py-0 max-lg:justify-between max-md:block   max-lg:flex-row justify-center lg:justify-start md:flex-row flex-col flex gap-5">
       <div className="auth flex-1 lg:flex-[0.9] py-5">
-        {location.pathname === "/auth" && (
+        {signupFlow === "authQuestions" && (
           <Link
             to="/"
             className="w-fit flex h-[30px] md:hidden items-center rounded-3xl gap-2 py-6 px-5 bg-gradient-to-br from-[#c6c6c247] to-[#feeedd25] bg-slate-10 g-transparent text-black"

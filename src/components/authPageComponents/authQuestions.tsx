@@ -71,14 +71,14 @@ const AuthQuestions: React.FC = () => {
   };
 
   return (
-    <div className="  md:flex flex-col max-lg:p-5 justify-center  h-full">
+    <div className="  md:flex flex-col md:h-[90vh]  max-lg:p-5 justify-center  h-full">
       {welcomeMessage()}
-      <div className="font-[Montserrat] mt-10 w-full md:mt-5">
+      <div className="font-[Montserrat] mt-10 w-full md:w-[80%] mx-auto lg:w-full md:mt-5">
         {filteredQuestions.map((item) => (
           <div key={item.id}>
             <p className="text-[#344054]">{item.question}</p>
             <div
-              className={`mt-3 w-full ${
+              className={`mt-3 w-full md ${
                 topicQuestion === "What do you plan on doing?"
                   ? "lg:flex-row max-lg:w-full   flex-col max-lg:space-y-4 flex space-x-4"
                   : "md:flex lg:grid md:flex-row md:justify-between flex-wrap flex-col max-md:space-y-4 flex grid-cols-[repeat(auto-fit,minmax(220px,1fr))] md:gap-5"
@@ -93,10 +93,10 @@ const AuthQuestions: React.FC = () => {
                 return (
                   <label
                     key={option.contentId}
-                    className={`flex items-center font-normal text-sm px-4 justify-start h-[60px md:py-6 py-3 lg:py-4 w-full ${
+                    className={`flex items-center font-normal text-sm px-4  justify-start  md:py-6 py-3 lg:py-4 w-full ${
                       topicQuestion === "What do you plan on doing?"
-                        ? "lg:w-[150px]"
-                        : "md:w-[190px] lg:w-[220px]"
+                        ? "lg:w-[180px] "
+                        : "md:w-[160px] lg:w-[220px]"
                     } ${
                       isSelected
                         ? "bg-[#2154cb11] text-[#2154cb]"
