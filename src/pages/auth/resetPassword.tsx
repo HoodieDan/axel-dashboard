@@ -38,7 +38,7 @@ const ResetPassword: React.FC = () => {
                             type={showPassword ? "text" : "password"}
                             placeholder="Enter new password"
                             id="password"
-                            className="rounded-3xl font-[Inter] py-5 md:py-[20px] pr-12 border text-black border-[#d0d5dd] w-full"
+                            className="rounded-3xl font-[Inter] py-7 md:py-[20px] pr-12 border text-black border-[#d0d5dd] w-full"
                             required
                             value={password}
                             onChange={(e) => {
@@ -48,7 +48,7 @@ const ResetPassword: React.FC = () => {
                         />
                         <button
                             type="button"
-                            className="absolute right-0 w-fit p-7 top-1/2 bg-transparent text-[#b7b7b7] transform -translate-y-1/2"
+                            className="absolute -right-1 w-fit p-7 top-1/2 bg-transparent text-[#b7b7b7] transform -translate-y-1/2"
                             onClick={() => setShowPassword(!showPassword)}
                         >
                             {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -58,7 +58,7 @@ const ResetPassword: React.FC = () => {
                         <Input
                             type={showConfirmPassword ? "text" : "password"}
                             placeholder="Confirm new password"
-                            className="rounded-3xl font-[Inter] pr-12 w-full text-black py-5 md:py-[20px] border-[#d0d5dd]"
+                            className="rounded-3xl font-[Inter] pr-12 w-full text-black py-7 md:py-[20px] border-[#d0d5dd]"
                             id="confirmPassword"
                             required
                             value={confirmPassword}
@@ -69,7 +69,7 @@ const ResetPassword: React.FC = () => {
                         />
                         <button
                             type="button"
-                            className="absolute -right-0 w-fit p-7 top-1/2 bg-transparent text-[#b7b7b7] transform -translate-y-1/2"
+                            className="absolute -right-1 w-fit p-7 top-1/2 bg-transparent text-[#b7b7b7] transform -translate-y-1/2"
                             onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                         >
                             {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
@@ -78,7 +78,7 @@ const ResetPassword: React.FC = () => {
                 </div>
                 <Button
                     type="submit"
-                    className="text-white lg:w-full font-[Inter] py-5 md:py-[20px] max-md:w-full rounded-3xl"
+                    className="text-white lg:w-full font-[Inter] py-7 md:py-[20px] max-md:w-full rounded-3xl"
                 >
                     Reset password
                 </Button>

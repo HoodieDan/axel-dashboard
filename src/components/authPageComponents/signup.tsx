@@ -71,7 +71,7 @@ const Signup: React.FC = () => {
                                 <FormControl>
                                     <Input
                                         placeholder="Enter your full name"
-                                        className="rounded-3xl font-[Montserrat] text-black py-5 border-[#d0d5dd]"
+                                        className="rounded-3xl font-[Montserrat] text-black py-7 border-[#d0d5dd]"
                                         {...field}
                                     />
                                 </FormControl>
@@ -88,7 +88,7 @@ const Signup: React.FC = () => {
                                 <FormControl>
                                     <Input
                                         placeholder="Enter your email"
-                                        className="rounded-3xl font-[Montserrat]  py-5 text-black border-[#d0d5dd]"
+                                        className="rounded-3xl font-[Montserrat]  py-7 text-black border-[#d0d5dd]"
                                         {...field}
                                     />
                                 </FormControl>
@@ -107,7 +107,7 @@ const Signup: React.FC = () => {
                                         <Input
                                             type={showPassword ? "text" : "password"}
                                             placeholder="Enter your password"
-                                            className="rounded-3xl py-5 pr-12 border font-[Montserrat] text-black border-[#d0d5dd] w-full"
+                                            className="rounded-3xl py-7 pr-12 border font-[Montserrat] text-black border-[#d0d5dd] w-full"
                                             {...field}
                                         />
                                         <Button
@@ -134,7 +134,7 @@ const Signup: React.FC = () => {
                                         <Input
                                             type={showConfirmPassword ? "text" : "password"}
                                             placeholder="Confirm your password"
-                                            className="rounded-3xl py-5 pr-12 font-[Montserrat] text-black border-[#d0d5dd] w-full"
+                                            className="rounded-3xl py-7 pr-12 font-[Montserrat] text-black border-[#d0d5dd] w-full"
                                             {...field}
                                         />
                                         <Button
@@ -151,7 +151,7 @@ const Signup: React.FC = () => {
                         )}
                     />
 
-                    <Button type="submit" className="rounded-3xl font-[Montserrat]  py-5">
+                    <Button type="submit" className="rounded-3xl font-[Montserrat]  py-7">
                         Get Started
                     </Button>
                 </form>

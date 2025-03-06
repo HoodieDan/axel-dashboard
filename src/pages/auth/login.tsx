@@ -54,7 +54,7 @@ const Login: React.FC = () => {
                                 <FormControl>
                                     <Input
                                         placeholder="Enter your email"
-                                        className="rounded-3xl py-5 md:py-[23px] font-[Inter] max-md:w-full text-lg focus:border-0 text-black border-[#d0d5dd]"
+                                        className="rounded-3xl py-7 md:py-[23px] font-[Inter] max-md:w-full text-lg focus:border-0 text-black border-[#d0d5dd]"
                                         {...field}
                                     />
                                 </FormControl>
@@ -73,7 +73,7 @@ const Login: React.FC = () => {
                                         <Input
                                             type={showPassword ? "text" : "password"}
                                             placeholder="Enter your password"
-                                            className="rounded-3xl font-[Inter] py-5 md:py-[23px] pr-12 border text-black outline-0 border-[#d0d5dd] shadow-0 focus:outline-0  focus:border-0    w-full"
+                                            className="rounded-3xl font-[Inter] py-7 md:py-[23px] pr-12 border text-black outline-0 border-[#d0d5dd] shadow-0 focus:outline-0  focus:border-0    w-full"
                                             {...field}
                                         />
                                         <Button
@@ -90,7 +90,7 @@ const Login: React.FC = () => {
                         )}
                     />
 
-                    <Button type="submit" className="py-5 md:py-[23px] font-[Inter] rounded-3xl">
+                    <Button type="submit" className="py-7 md:py-[23px] font-[Inter] rounded-3xl">
                         Login
                     </Button>
                 </form>

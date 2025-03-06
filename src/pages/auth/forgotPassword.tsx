@@ -43,7 +43,7 @@ const ForgotPassword: React.FC = () => {
                                 <FormControl>
                                     <Input
                                         placeholder="Enter your email"
-                                        className=" rounded-3xl  w-full font-[Inter] md:py-[20px] py-5 text-black border-[#d0d5dd]"
+                                        className=" rounded-3xl  w-full font-[Inter] md:py-[20px] py-7 text-black border-[#d0d5dd]"
                                         {...field}
                                     />
                                 </FormControl>
@@ -55,13 +55,13 @@ const ForgotPassword: React.FC = () => {
                     <div className="flex gap-4 font-[Inter] pt-4">
                         <Link
                             to="../login"
-                            className="bg-white flex-1 text-black rounded-3xl py-2.5 md:py-[14px] px-5 border flex items-center justify-center font-semibold"
+                            className="bg-white flex-1 text-black rounded-3xl py-4 md:py-[14px] px-5 border flex items-center justify-center font-semibold"
                         >
                             Back
                         </Link>
                         <Button
                             type="submit"
-                            className="text-white flex items-center justify-center flex-[4.5] bg-[#262b3a] py-5 md:py-[22px] rounded-3xl"
+                            className="text-white flex items-center justify-center flex-[4.5] bg-[#262b3a] py-7 md:py-[22px] rounded-3xl"
                         >
                             Get reset link
                         </Button>
