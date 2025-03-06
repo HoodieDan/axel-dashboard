@@ -5,8 +5,7 @@ import { increment } from '../store/slices/counter';
 const HomePage: React.FC = () => {
     const dispatch = useDispatch();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const counter = useSelector((state: any ) => state?.counter?.value);
-    console.log(counter)
+    const counter = useSelector((state: any) => state.counter.value);
 
     const handleIncrement = () => {
         dispatch(increment())

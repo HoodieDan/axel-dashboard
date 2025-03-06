@@ -10,9 +10,11 @@ import UserSessionHistory from "./pages/Dashboard/User/UserSessionHistory";
 import HomePage from "./pages/HomePage";
 import "./styles/index.scss";
 import UserPlan from "./components/layouts/userAuth";
-import Login from "./components/authPageComponents/login";
+import LoginPage from "./pages/auth/login";
 import Tutorial from "./pages/auth/tutorial";
 import AuthPage from "./pages/auth";
+import ForgotPassword from "./pages/auth/forgotPassword";
+import ResetPassword from "./pages/auth/resetPassword";
 
 function App() {
     return (
@@ -37,19 +39,21 @@ function App() {
                         <Route path="settings" element={<UserSettings />} />
                     </Route>
 
-          {/* Signup flow */}
-          <Route path="/auth" element={<UserPlan />}>
-            <Route index element={<AuthPage />} />
-            <Route path="login" element={<Login />} />
-            <Route path="tutorial" element={<Tutorial />} />
-          </Route>
+                    {/* Signup flow */}
+                    <Route path="/" element={<UserPlan />}>
+                        <Route index path="signup" element={<AuthPage />} />
+                        <Route path="login" element={<LoginPage />} />
+                        <Route path="forgot-password" element={<ForgotPassword />} />
+                        <Route path="reset-password" element={<ResetPassword />} />
+                        <Route path="tutorial" element={<Tutorial />} />
+                    </Route>
 
-          <Route path="/dashboard/admin" element={<DashboardLayout />}>
-            <Route index element={<AdminDashboardHome />} />
-            <Route path="analytics" element={<UserAnalytics />} />
-            <Route path="settings" element={<UserSettings />} />
-          </Route>
-      
+                    <Route path="/dashboard/admin" element={<DashboardLayout />}>
+                        <Route index element={<AdminDashboardHome />} />
+                        <Route path="analytics" element={<UserAnalytics />} />
+                        <Route path="settings" element={<UserSettings />} />
+                    </Route>
+
                     {/* 404 Page */}
                     {/* <Route path="*" element={<NotFound />} /> */}
                 </Routes>
