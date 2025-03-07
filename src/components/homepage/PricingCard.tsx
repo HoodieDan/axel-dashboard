@@ -15,42 +15,38 @@ function PricingCard({ plan }: Params) {
   return (
     <div
       className={clsx(
-        "h-max lg:h-[650px] p-[30px] font-montreal  max-w-[500px] rounded-[24px] border flex flex-col justify-between border-[#6F7C8E]",
-        plan.highlight &&
-          "bg-gunmetal text-white relative lg:bottom-[48px] border-none"
+        "h-max group p-8 font-montreal space-y-10 rounded-2xl duration-700 hover:bg-gunmetal hover:stroke-white hover:border-none hover:text-white cursor-pointer lg:h-full border flex flex-col justify-between border-[#6F7C8E]",
+        plan.highlight && "relative lg:bottom-[4rem]"
       )}
     >
-      <div>
-        <div className="space-y-[30px] relative pb-[24px] border-b">
+      <div className="space-y-12">
+        <div className="space-y-8 relative border-b pb-8">
           {plan.highlight && (
-            <div className="px-[12px] py-[10px] absolute -top-[40px] -right-12 rotate-12 bg-alice-blue w-max text-black text-[14px] rounded-full">
+            <div className="px-5 py-3 absolute -top-[3rem] -right-14 rotate-12 bg-alice-blue w-max text-black small rounded-full">
               🔥 Most Popular
             </div>
           )}
-          <div className="py-[6px] font-medium px-[10px] text-[12px] rounded-[6px] bg-[#B5B5B529] w-max">
+          <div className="py-3 font-medium px-4 small rounded-lg bg-[#B5B5B529] w-max">
             {plan.type}
           </div>
-          <div className="space-y-[5px]">
+          <div className="space-y-2">
             <p
               className={clsx(
-                "text-[16px]",
                 plan.highlight ? "text-[#ECB25E]" : "text-green-sheen"
               )}
             >
               {plan.sessions} SESSIONS
             </p>
-            <h3 className="text-[16px] flex items-center font-light">
-              <span className="text-[48px] font-bold mr-[20px]">
-                ${plan.price}
-              </span>{" "}
-              / Month
-            </h3>
+            <div className="flex items-center font-light">
+              <h2 className="font-bold mr-[20px]">${plan.price}</h2>{" "}
+              <p>/ Month</p>
+            </div>
           </div>
         </div>
 
-        <div className="space-y-[22px] mt-[50px]">
+        <div className="space-y-6 mt-[50px]">
           {plan.contents.map((content, idx) => (
-            <div className="flex gap-[16px] items-center">
+            <div className="flex gap-4 items-center">
               <div key={idx}>
                 <svg
                   width="16"
@@ -58,8 +54,7 @@ function PricingCard({ plan }: Params) {
                   viewBox="0 0 16 16"
                   fill="none"
                   className={clsx(
-                    "stroke-gunmetal",
-                    plan.highlight && "stroke-white"
+                    "stroke-gunmetal h-5 w-5 group-hover:stroke-white"
                   )}
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -74,7 +69,7 @@ function PricingCard({ plan }: Params) {
                   />
                 </svg>
               </div>
-              <p className="text-[16px] w-full ">{content}</p>
+              <p className="w-full">{content}</p>
             </div>
           ))}
         </div>
@@ -82,8 +77,7 @@ function PricingCard({ plan }: Params) {
 
       <button
         className={clsx(
-          "py-[12px] rounded-[10px] mt-[35px] w-full bg-[#6F7C8E]",
-          plan.highlight && "bg-alice-blue text-black"
+          "flex gap-2 mx-auto lg:mx-0 w-full group-hover:bg-alice-blue group-hover:text-black py-4 px-6 items-center justify-center rounded-2xl bg-[#6F7C8E]"
         )}
       >
         {plan.button_text}

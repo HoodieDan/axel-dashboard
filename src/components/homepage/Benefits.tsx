@@ -1,12 +1,13 @@
 function Benefits() {
   return (
-    <section className="lg:h-[945px] px-[20px] py-[100px] space-y-[75px] flex flex-col justify-center items-center">
+    <section className=" px-10 lg:px-20 py-28 gap-y-24 flex flex-col justify-center items-center">
       <div className="space-y-[24px] flex flex-col items-center">
-        <div className="px-[12px] py-[10px] flex gap-[10px] items-center w-max border rounded-[6px] bg-white border-[#E1E5E7] mx-auto">
+        <div className="px-3 py-3 flex gap-2 items-center w-max border rounded-[6px] bg-white border-[#E1E5E7] mx-auto">
           <svg
             width="16"
             height="16"
             viewBox="0 0 16 16"
+            className="h-4 w-4"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -15,26 +16,27 @@ function Benefits() {
               fill="#4C5C75"
             />
           </svg>
-          <p className="text-[14px]">BENEFITS</p>
+          <p className="small font-montserrat">BENEFITS</p>
         </div>
 
-        <div className="lg:w-[394px] text-wrap text-center mx-auto space-y-[15px] flex flex-col items-center">
-          <h2 className="text-[30px] font-montreal lg:text-[40px] lg:w-[606px] leading-[56.2px]">
+        <div className="lg:w-[55%] text-center mx-auto space-y-4 flex flex-col items-center">
+          <h4 className="h-max font-montreal leading-snug">
             What's in It for You?
-          </h2>
-          <p className="text-dark-electric-blue text-[16px] leading-[24px] ">
+          </h4>
+          <p className="text-dark-electric-blue leading-normal">
             Track progress, receive actionable feedback, and captivate your
             audience like never before.
           </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[50px] w-full lg:w-max mx-auto">
-        <div className="flex gap-x-[40px] w-full lg:w-[520px] items-center py-[30px] px-[35px] rounded-[20px] bg-cultured">
-          <div className="h-[35px] min-w-[35px] flex items-center justify-center rounded-full bg-gunmetal">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full lg:w-[90%] mx-auto">
+        <div className="flex gap-x-10 w-full border border-[#EBF1FF] items-center py-8 px-9 rounded-2xl bg-[#EBF1FF]">
+          <div className="p-3 flex items-center justify-center rounded-full bg-gunmetal">
             <svg
               width="16"
               height="15"
+              className="h-5 w-5"
               viewBox="0 0 16 15"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -60,19 +62,20 @@ function Benefits() {
               </defs>
             </svg>
           </div>
-          <div className="space-y-[15px]">
-            <h4 className="text-[20px] font-montreal">Confidence & Mastery</h4>
-            <p className="text-[16px] text-dark-electric-blue">
+          <div className="space-y-4">
+            <h6 className=" font-montreal">Confidence & Mastery</h6>
+            <p className="text-dark-electric-blue">
               Perfect your tone, pace, and delivery through personalized
               feedback.
             </p>
           </div>
         </div>
-        <div className="flex gap-x-[40px] w-full lg:w-[520px] items-center py-[30px] px-[35px] rounded-[20px] bg-cultured">
-          <div className="h-[35px] min-w-[35px] flex items-center justify-center rounded-full bg-gunmetal">
+        <div className="flex gap-x-10 w-full border border-[#EBF1FF] items-center py-8 px-9 rounded-2xl bg-[#EBF1FF]">
+          <div className="p-3 flex items-center justify-center rounded-full bg-gunmetal">
             <svg
               width="16"
               height="15"
+              className="h-5 w-5"
               viewBox="0 0 16 15"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -86,18 +89,19 @@ function Benefits() {
               />
             </svg>
           </div>
-          <div className="space-y-[15px]">
-            <h4 className="text-[20px] font-montreal">Real-Time Insights</h4>
-            <p className="text-[16px] text-dark-electric-blue">
+          <div className="space-y-4">
+            <h6 className=" font-montreal">Real-Time Insights</h6>
+            <p className="text-dark-electric-blue">
               Get immediate feedback on audience engagement and sentiment.
             </p>
           </div>
         </div>
-        <div className="flex gap-x-[40px] w-full lg:w-[520px] items-center py-[30px] px-[35px] rounded-[20px] bg-cultured">
-          <div className="h-[35px] min-w-[35px] flex items-center justify-center rounded-full bg-gunmetal">
+        <div className="flex gap-x-10 w-full border border-[#EBF1FF] items-center py-8 px-9 rounded-2xl bg-[#EBF1FF]">
+          <div className="p-3 flex items-center justify-center rounded-full bg-gunmetal">
             <svg
               width="16"
               height="15"
+              className="h-5 w-5"
               viewBox="0 0 16 15"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -123,21 +127,20 @@ function Benefits() {
               </defs>
             </svg>
           </div>
-          <div className="space-y-[15px]">
-            <h4 className="text-[20px] font-montreal">
-              Comprehensive Analytics
-            </h4>
-            <p className="text-[16px] text-dark-electric-blue">
+          <div className="space-y-4">
+            <h6 className=" font-montreal">Comprehensive Analytics</h6>
+            <p className="text-dark-electric-blue">
               Track your progress with detailed session reports and playback
               features.
             </p>
           </div>
         </div>
-        <div className="flex gap-x-[40px] w-full lg:w-[520px] items-center py-[30px] px-[35px] rounded-[20px] bg-cultured">
-          <div className="h-[35px] min-w-[35px] flex items-center justify-center rounded-full bg-gunmetal">
+        <div className="flex gap-x-10 w-full border border-[#EBF1FF] items-center py-8 px-9 rounded-2xl bg-[#EBF1FF]">
+          <div className="p-3 flex items-center justify-center rounded-full bg-gunmetal">
             <svg
               width="16"
               height="15"
+              className="h-5 w-5"
               viewBox="0 0 16 15"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -163,11 +166,9 @@ function Benefits() {
               </defs>
             </svg>
           </div>
-          <div className="space-y-[15px]">
-            <h4 className="text-[20px] font-montreal">
-              Goal-Oriented Practice
-            </h4>
-            <p className="text-[16px] text-dark-electric-blue">
+          <div className="space-y-4">
+            <h6 className=" font-montreal">Goal-Oriented Practice</h6>
+            <p className="text-dark-electric-blue">
               Set milestones, achieve badges, and grow your speaking skills
               systematically.
             </p>
@@ -175,13 +176,14 @@ function Benefits() {
         </div>
       </div>
 
-      <div className="relative h-[60px] w-full">
-        <button className="flex gap-[8px] w-max h-[60px] px-[40px] relative mx-auto items-center justify-center rounded-full">
+      <div className="relative flex justify-center w-full">
+        <button className="flex gap-2 mx-auto lg:mx-0 w-full lg:w-max py-4 px-6 items-center justify-center rounded-2xl">
           <p>Unlock Your Potential</p>
           <svg
             width="15"
             height="18"
             viewBox="0 0 15 18"
+            className="h-6 w-7"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >

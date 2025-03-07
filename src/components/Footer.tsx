@@ -1,16 +1,19 @@
+import { Link } from "react-router-dom";
+
 function Footer() {
   return (
-    <section className="px-[10px] lg:px-[60px] bg-gunmetal text-white pt-[100px] space-y-[98px]">
-      <div className="lg:h-[231.46px] p-10 lg:px-[70px] flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:justify-between text-black lg:items-center bg-alice-blue rounded-[24px]">
-        <h3 className="text-[30px] font-montreal lg:text-[35px] lg:w-[500px] font-medium leading-[42.1px] lg:leading-[45.5px]">
+    <section className="px-10 lg:px-20 bg-gunmetal text-white pt-16 space-y-20">
+      <div className="p-20  flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:justify-between text-black lg:items-center bg-alice-blue rounded-2xl">
+        <h4 className=" font-montreal lg:w-[17rem] font-medium leading-relaxed">
           Ready to Speak with Confidence?
-        </h3>
-        <button className="w-[220px] h-[71px] space-x-[12px] rounded-[25px]">
-          <p className="text-[18px]">Get Started</p>
+        </h4>
+        <button className="px-6 py-3 space-x-10 rounded-2xl">
+          <p className="">Get Started</p>
           <svg
             width="28"
             height="28"
             viewBox="0 0 28 28"
+            className="h-6 w-7"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -30,47 +33,86 @@ function Footer() {
         </button>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between gap-[83.48px] px-[50px] text-[16px] text-[#626362]">
-        <div className="w-[219px] space-y-[40px]">
+      <div className="flex flex-col lg:flex-row justify-between gap-[83.48px] lg:px-[50px] text-[#626362]">
+        <div className="space-y-3 lg:w-1/4">
           <img src="./assets/logo.png" alt="brand logo" className="h-8" />
-          <p>Don't wait for your next big opportunity to practice.</p>
+          <p>Start speaking with confidence</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-[83.48px]">
-          <div className="space-y-[28px]">
-            <p className="text-[#2F4858]">Features</p>
-            <ul className="space-y-[24px]">
-              <li>Easy Integration</li>
-              <li>Fast Support</li>
-              <li>Secure Payments</li>
-              <li>24/7 Availability</li>
+        <div className="flex flex-col lg:flex-row space-y-16 lg:w-3/4 justify-between lg:pl-[10rem]">
+          <div className="space-y-8">
+            <p className="text-[#737373]">Pages</p>
+            <ul className="space-y-6 text-white">
+              <li>
+                <Link to="/">
+                  <p className="small">Home</p>
+                </Link>
+              </li>
+              <li>
+                <Link to="/features">
+                  <p className="small">Features</p>
+                </Link>
+              </li>
+              <li>
+                <Link to="/pricing">
+                  <p className="small">Pricing</p>
+                </Link>
+              </li>
             </ul>
           </div>
-          <div className="space-y-[28px]">
-            <p className="text-[#2F4858]">Support</p>
-            <ul className="space-y-[24px]">
-              <li>Help Center</li>
-              <li>Live Chat</li>
-              <li>How It Works</li>
-              <li>User Guides</li>
+          <div className="space-y-8">
+            <p className="text-[#737373]">Support</p>
+            <ul className="space-y-6 text-white">
+              <li>
+                <Link to="">
+                  <p className="small">Help Center</p>
+                </Link>
+              </li>
+              <li>
+                <Link to="">
+                  <p className="small">Live Chat</p>
+                </Link>
+              </li>
+              <li>
+                <Link to="">
+                  <p className="small">How It Works</p>
+                </Link>
+              </li>
+              <li>
+                <Link to="">
+                  <p className="small">User Guides</p>
+                </Link>
+              </li>
             </ul>
           </div>
-          <div className="space-y-[28px]">
-            <p className="text-[#2F4858]">Legal</p>
-            <ul className="space-y-[24px]">
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
-              <li>Cookie Policy</li>
+          <div className="space-y-8">
+            <p className="text-[#737373]">Legal</p>
+            <ul className="space-y-6 text-white">
+              <li>
+                <Link to="">
+                  <p className="small">Privacy Policy</p>
+                </Link>
+              </li>
+              <li>
+                <Link to="">
+                  <p className="small">Terms of Service</p>
+                </Link>
+              </li>
+              <li>
+                <Link to="">
+                  <p className="small">Cookie Policy</p>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-t-alice-blue flex flex-col lg:flex-row space-y-4 lg:space-y-0 py-[40px] justify-between text-[16px] text-[#626362]">
+      <div className="border-t border-t-alice-blue flex flex-col lg:flex-row space-y-4 lg:space-y-0 py-6 justify-between text-white">
         <p>© 2024 Greentech Inc. All Rights Reserved.</p>
-        <div className="flex items-center gap-[30px]">
+        <div className="flex items-center gap-4">
           <p>Terms & Condition</p>
-          <div className="h-2 w-2 rounded-full bg-[#626362]" />
+          <div className="h-2 w-2 rounded-full bg-white" />
           <p>Privacy Policy</p>
         </div>
       </div>

@@ -1,22 +1,30 @@
-function Faq() {
-  let faqs = [
-    { question: "How does the virtual audience work?", answer: "" },
-    { question: "Can I practice with my own slides?", answer: "" },
-    {
-      question: "Is there a free trial?",
-      answer:
-        "Yes! Sign up to try our platform for free and experience the benefits firsthand",
-    },
-  ];
+import clsx from "clsx";
+import { JSX } from "react";
+
+interface Params {
+  item: {
+    title: string;
+    content: string;
+    svg: JSX.Element;
+  };
+  className?: string;
+}
+
+function HowItWorksCard({ className, item }: Params) {
   return (
-    <section className="px-10 lg:px-20 py-28 gap-y-24 flex flex-col lg:flex-row justify-between bg-alice-blue">
-      <div className="space-y-[24px] flex flex-col items-start">
-        <div className="px-3 py-3 flex rounded-lg gap-2 items-center w-max border bg-white border-[#E1E5E7]">
+    <div
+      className={clsx(
+        "flex flex-col lg:flex-col px-10 lg:px-20 lg:space-x-22 items-center py-22 w-full justify-between",
+        className
+      )}
+    >
+      <div className="space-y-6 flex-1 w-full font-montserrat">
+        <div className="px-3 py-3 flex gap-2 w-max items-center border rounded-xl bg-white border-[#E1E5E7]">
           <svg
             width="16"
             height="16"
-            viewBox="0 0 16 16"
             className="h-4 w-4"
+            viewBox="0 0 16 16"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -25,47 +33,18 @@ function Faq() {
               fill="#4C5C75"
             />
           </svg>
-          <p className="small font-montserrat">FAQs</p>
+          <p className="small text-dull-electric-blue">HOW IT WORKS</p>
         </div>
 
-        <div className="lg:w-[70%] text-wrap space-y-4">
-          <h4 className="h-max font-montreal leading-snug">
-            Got Questions? We've Got Answers.
-          </h4>
-          <p className="text-dark-electric-blue leading-normal">
-            Track progress, receive actionable feedback, and captivate your
-            audience like never before.
-          </p>
+        <div className="space-y-4">
+          <h4 className="h-max font-montreal leading-snug">{item.title}</h4>
+          <p className="text-dark-electric-blue">{item.content}</p>
         </div>
       </div>
 
-      <div className="space-y-4 lg:w-[50%]">
-        {faqs.map((faq, idx) => (
-          <div className="py-6 px-6 bg-white rounded-2xl">
-            <div key={idx} className="flex items-center gap-6 cursor-pointer">
-              <svg
-                width="16"
-                height="2"
-                className="h-4 w-4"
-                viewBox="0 0 16 2"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 1H15"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-              <p>{faq.question}</p>
-            </div>
-            <p className="mt-6 ml-11">{faq.answer}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+      <div className="flex-1 flex items-start justify-start">{item.svg}</div>
+    </div>
   );
 }
 
-export default Faq;
+export default HowItWorksCard;

@@ -1,42 +1,53 @@
-import { JSX } from "react";
-import TestimonialSVG from "./svgs/TestimonialSVG";
-import clsx from "clsx";
+import FeaturesSectionCard from "./FeaturesSectionCard";
+import FeatureCardFiveSVG from "./svgs/FeatureCardFiveSVG";
+import FeatureCardFourSVG from "./svgs/FeatureCardFourSVG";
+import FeatureCardOneSVG from "./svgs/FeatureCardOneSVG";
+import FeatureCardSixSVG from "./svgs/FeatureCardSixSVG";
+import FeatureCardThreeSVG from "./svgs/FeatureCardThreeSVG";
+import FeatureCardTwoSVG from "./svgs/FeatureCardTwoSVG";
 
-type Testimonial = {
-  img?: string;
-  svg?: JSX.Element;
-  alt?: string;
-  text: string;
-  subtext: string;
-  avatar?: string;
-};
-
-function Testiomonial() {
-  let testimonials: Testimonial[] = [
+function FeaturesSection() {
+  let features = [
     {
-      svg: <TestimonialSVG />,
-      text:
-        "“This platform revolutionized how I prepare for keynotes. The audience feedback feels incredibly real!”",
-      subtext: "- Sarah M., Public Speaker",
-      avatar: "./assets/profile3.png",
+      svg: <FeatureCardOneSVG />,
+      title: "Prompt and Cue Card System",
+      content:
+        "Get a heads up on your next speaking point and be better prepared to deliver the best way possible",
     },
     {
-      img: "./assets/testimonialimg.jpeg",
-      text:
-        "“Practicing my pitch here gave me the confidence to win over investors. I highly recommend!”",
-      subtext: "— John D., Startup Founder",
+      svg: <FeatureCardTwoSVG />,
+      title: "Speaker Analytics and Self-Assessment Tools",
+      content:
+        "Live Analysis and feedback to your speech powered by unparalleled AI Technology",
     },
     {
-      svg: <TestimonialSVG />,
-      text:
-        "“I love the detailed analytics and playback options. It's like having a personal speaking coach.”",
-      subtext: "-  Priya S., Corporate Trainer",
-      avatar: "./assets/profile1.png",
+      svg: <FeatureCardThreeSVG />,
+      title: "Realistic Environment Enhancements",
+      content:
+        "Immersive Speaking Rooms that give you a taste of the real thing even including reactions from your Audience and Listeners",
+    },
+    {
+      svg: <FeatureCardFourSVG />,
+      title: "Post-Speech Feedback Summary",
+      content:
+        "We enable you to be aware of your Progress and stay goal oriented while you train",
+    },
+    {
+      svg: <FeatureCardFiveSVG />,
+      title: "Prompt and Cue Card System",
+      content:
+        "In-depth Analysis ensuring you can give your best the next time by understanding what you need to do better in detail",
+    },
+    {
+      svg: <FeatureCardSixSVG />,
+      title: "Speech Progress & Phase Indicators",
+      content:
+        "Know where you are in the Journey of your  delivery so you can flow with an awareness of how much time you take, every time you train",
     },
   ];
   return (
-    <section className="py-26 px-10 lg:px-20 space-y-20 flex flex-col justify-center items-center">
-      <div className="space-y-10 flex flex-col items-center">
+    <section className="px-10 lg:px-20 pb-20 space-y-20 font-montserrat">
+      <div className="space-y-10 flex flex-col items-center font-montserrat">
         <div className="px-3 py-3 flex gap-2 items-center w-max border rounded-[6px] bg-white border-[#E1E5E7] mx-auto">
           <svg
             width="16"
@@ -51,66 +62,26 @@ function Testiomonial() {
               fill="#4C5C75"
             />
           </svg>
-          <p className="small">TESTIMONIALS</p>
+          <p className="small text-dull-electric-blue">FEATURES</p>
         </div>
 
-        <div className="lg:w-[32rem] text-center mx-auto space-y-4 flex flex-col items-center">
+        <div className="lg:w-[50%] text-center mx-auto space-y-4 flex flex-col items-center">
           <h4 className="h-max font-montreal leading-snug">
-            Loved by Aspiring Speakers and Industry Leaders Alike
+            Everything you need in one <br />
+            platform
           </h4>
-          <p className="text-dark-electric-blue leading-normal">
-            Track progress, receive actionable feedback, and captivate your
-            audience like never before.
-          </p>
         </div>
       </div>
 
-      <div className="w-full overflow-x-auto">
-        <div className="flex gap-8 lg:flex-nowrap flex-wrap lg:pr-8">
-          {testimonials.map((testimonial, idx) => (
-            <div
-              key={idx}
-              className="flex-shrink-0 w-full lg:w-[30rem] h-[25rem] relative bg-[#C1C2B4] overflow-clip rounded-2xl"
-            >
-              {testimonial.img ? (
-                <img
-                  src={testimonial.img}
-                  className="absolute h-full w-full object-cover"
-                  alt="profile"
-                />
-              ) : (
-                testimonial.svg
-              )}
-              <div className="flex h-full justify-end items-end">
-                <div
-                  className={clsx(
-                    "space-y-6 relative z-10 p-6 py-8 items-end justify-baseline",
-                    testimonial.img
-                      ? "bg-gradient-to-b from-black/0 to-black from-0% to-50% text-white"
-                      : "bg-[#C1C2B4]"
-                  )}
-                >
-                  <p className="big">{testimonial.text}</p>
-                  <div className="flex gap-6 items-center">
-                    {testimonial.avatar && (
-                      <img
-                        src={testimonial.avatar}
-                        className="h-8 w-8"
-                        alt="profile"
-                      />
-                    )}
-                    <p className="small">{testimonial.subtext}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {features.map((feature, idx) => (
+          <FeaturesSectionCard key={idx} feature={feature} />
+        ))}
       </div>
 
       <div className="relative w-full flex justify-center">
         <button className="flex gap-2 mx-auto lg:mx-0 w-full lg:w-max py-4 px-6 items-center justify-center rounded-2xl relative">
-          <p>Join the community</p>
+          <p>Start Practicing Today</p>
           <svg
             width="15"
             height="18"
@@ -130,4 +101,4 @@ function Testiomonial() {
   );
 }
 
-export default Testiomonial;
+export default FeaturesSection;

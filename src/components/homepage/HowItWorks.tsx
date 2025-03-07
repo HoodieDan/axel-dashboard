@@ -1,12 +1,13 @@
 function HowItWorks() {
   return (
-    <section className=" py-[100px] pb-[113px] px-[20px] lg:px-[60px] space-y-[84px] bg-alice-blue flex flex-col justify-center items-center">
+    <section className="bg-alice-blue px-10 lg:px-20 py-28 gap-y-24 flex flex-col justify-center items-center">
       <div className="space-y-[24px] flex flex-col items-center">
-        <div className="px-[12px] py-[10px] flex gap-[10px] items-center w-max border rounded-[6px] bg-white border-[#E1E5E7] mx-auto">
+        <div className="px-3 py-3 flex gap-2 items-center w-max border rounded-[6px] bg-white border-[#E1E5E7] mx-auto">
           <svg
             width="16"
             height="16"
             viewBox="0 0 16 16"
+            className="h-4 w-4"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -15,74 +16,101 @@ function HowItWorks() {
               fill="#4C5C75"
             />
           </svg>
-          <p className="text-[14px]">HOW IT WORKS</p>
+          <p className="small">HOW IT WORKS</p>
         </div>
 
-        <div className="w-full lg:w-[394px] text-wrap text-center mx-auto space-y-[15px] flex flex-col items-center">
-          <h2 className="text-[30px] font-montreal lg:text-[40px] w-[330px] lg:w-[500px] leading-[42.1px] lg:leading-[56.2px]">
-            Simple Steps to Speaking Success
-          </h2>
-          <p className="text-dark-electric-blue text-[16px] leading-[24px] ">
+        <div className="text-center mx-auto space-y-4 flex flex-col items-center">
+          <h4 className="h-max font-montreal leading-snug">
+            Simple Steps to Speaking <br />
+            Success
+          </h4>
+          <p className="text-dark-electric-blue leading-normal">
             A simple way to use EngageX
           </p>
         </div>
       </div>
 
       <div className="flex flex-col lg:flex-row w-full lg:justify-between items-center gap-x-10">
-        <div className="">
-          <div className="flex gap-x-[30px] items-center">
-            <div className="h-[45px] w-[45px] bg-gunmetal/50 flex items-center justify-center text-white rounded-full text-[18px]">
-              1
+        <div className="lg:w-[35%]">
+          <div className="flex gap-x-8 items-center">
+            <div className="w-10 h-10 relative z-20 aspect-square bg-gunmetal/50 flex items-center justify-center text-white rounded-full">
+              <p>1</p>
             </div>
-            <div className="w-[80%] lg:w-[302px] space-y-[8px]">
-              <h3 className="text-[20px] font-montreal">Sign Up</h3>
-              <p className="text-[14px] text-dark-electric-blue leading-[19.67px]">
+            <div className="space-y-4">
+              <h6 className="font-montreal">Sign Up</h6>
+              <p className="small text-dark-electric-blue">
                 Create your profile and select your focus: public speaking or
                 presentation.
               </p>
             </div>
           </div>
-          <div className="w-[45px] h-[70px] relative flex items-center justify-center">
-            <div className="h-[90px] border-r absolute border-dashed border-gunmetal/50 w-0" />
+          <div className=" relative h-20 w-10 flex items-center justify-center">
+            <svg
+              width="1"
+              className="h-56 -top-6 absolute z-10"
+              // viewBox="0 0 1 120"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0.5 0V130" stroke="black" stroke-dasharray="10 10" />
+            </svg>
           </div>
-          <div className="flex gap-x-[30px] items-center">
-            <div className="h-[45px] gap-[8px] w-[45px] bg-gunmetal/50 flex items-center justify-center text-white rounded-full text-[18px]">
-              2
+          <div className="flex gap-x-8 items-center">
+            <div className="w-10 h-10 relative z-20 aspect-square gap-[8px] bg-gunmetal/50 flex items-center justify-center text-white rounded-full">
+              <p>2</p>
             </div>
-            <div className="w-[80%] lg:w-[302px] space-y-[8px]">
-              <h3 className="text-[20px] font-montreal">Set Up Your Session</h3>
-              <p className="text-[14px] text-dark-electric-blue leading-[19.67px]">
+            <div className="space-y-4">
+              <h6 className="font-montreal">Set Up Your Session</h6>
+              <p className="small text-dark-electric-blue">
                 Upload slides, outline your phases, or choose from our
                 templates.
               </p>
             </div>
           </div>
-          <div className="w-[45px] h-[70px] relative flex items-center justify-center">
-            <div className="h-[90px] border-r absolute border-dashed border-gunmetal/50 w-0" />
+          <div className=" relative h-20 w-10 flex items-center justify-center">
+            <svg
+              width="1"
+              className="h-56 -top-6 absolute z-10"
+              // viewBox="0 0 1 120"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0.5 0V130" stroke="black" stroke-dasharray="10 10" />
+            </svg>
           </div>
-          <div className="flex gap-x-[30px] items-center">
-            <div className="h-[45px] w-[45px] bg-gunmetal/50 flex items-center justify-center text-white rounded-full text-[18px]">
-              3
+          <div className="flex gap-x-8 items-center">
+            <div className="w-10 h-10 relative z-20 aspect-square bg-gunmetal/50 flex items-center justify-center text-white rounded-full">
+              <p>3</p>
             </div>
-            <div className="w-[80%] lg:w-[302px] space-y-[8px]">
-              <h3 className="text-[20px] font-montreal">
+            <div className="space-y-4">
+              <h6 className="font-montreal">
                 Practice in a Realistic Virtual Room
-              </h3>
-              <p className="text-[14px] text-dark-electric-blue leading-[19.67px]">
+              </h6>
+              <p className="small text-dark-electric-blue">
                 Engage with dynamic AI-powered audience reactions.
               </p>
             </div>
           </div>
-          <div className="w-[45px] h-[70px] relative flex items-center justify-center">
-            <div className="h-[90px] border-r absolute border-dashed border-gunmetal/50 w-0" />
+          <div className=" h-20 w-10 relative flex items-center justify-center">
+            <svg
+              width="1"
+              className="h-[150rem] -top-6 absolute z-10"
+              // viewBox="0 0 1 120"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0.5 0V130" stroke="black" stroke-dasharray="10 10" />
+            </svg>
           </div>
-          <div className="flex gap-x-[30px] items-center">
-            <div className="h-[45px] w-[45px] bg-gunmetal/50 flex items-center justify-center text-white rounded-full text-[18px]">
-              4
+          <div className="flex gap-x-8 items-center">
+            <div className="w-10 h-10 relative">
+              <div className="w-10 h-10 aspect-square absolute  z-30 bg-gunmetal/50 flex items-center justify-center text-white rounded-full">
+                <p>4</p>
+              </div>
             </div>
-            <div className="w-[80%] lg:w-[302px] space-y-[8px]">
-              <h3 className="text-[20px] font-montreal">Review & Improve</h3>
-              <p className="text-[14px] text-dark-electric-blue leading-[19.67px]">
+            <div className="space-y-4">
+              <h6 className="font-montreal">Review & Improve</h6>
+              <p className="small text-dark-electric-blue">
                 Analyze detailed feedback and rewatch key moments to refine your
                 skills.
               </p>
@@ -90,7 +118,7 @@ function HowItWorks() {
           </div>
         </div>
 
-        <div className="h-[509px] w-full hidden lg:block rounded-3xl overflow-clip relative">
+        <div className="h-[40rem] w-full lg:w-1/2 hidden lg:block rounded-3xl overflow-clip relative">
           <img
             src="./assets/videopc.png"
             className="absolute h-full w-full object-cover top-0 right-0"

@@ -16,6 +16,8 @@
     --color-green-sheen: #64BA9E;
     --color-medium-sea-green: #40B869;
     --color-dark-charcoal: #333333;
+    --color-dark-orange: #ECB25E;
+    --color-dull-electric-blue: #4C5C75;
 }
 
 @plugin "tailwindcss-animate";

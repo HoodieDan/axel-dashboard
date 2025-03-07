@@ -1,6 +1,6 @@
 import PricingCard from "./PricingCard";
 
-function Pricing() {
+function Pricing({ subtext }: { subtext?: string }) {
   let plans = [
     {
       type: "STARTER PLAN",
@@ -49,13 +49,14 @@ function Pricing() {
     },
   ];
   return (
-    <section className="py-[100px] px-[20px] lg:px-[60px] space-y-[75px] lg:space-y-[84px] flex flex-col justify-center items-center">
-      <div className="space-y-[24px] flex flex-col items-center">
-        <div className="px-[12px] py-[10px] flex gap-[10px] items-center w-max border rounded-[6px] bg-white border-[#E1E5E7] mx-auto">
+    <section className=" px-10 lg:px-20 py-28 font-montserrat border-2 gap-y-24 relative flex flex-col justify-center items-center">
+      <div className="space-y-10 flex flex-col items-center">
+        <div className="px-3 py-3 flex gap-2 items-center w-max border rounded-lg bg-white border-[#E1E5E7] mx-auto">
           <svg
             width="16"
             height="16"
             viewBox="0 0 16 16"
+            className="h-4 w-4"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -64,43 +65,43 @@ function Pricing() {
               fill="#4C5C75"
             />
           </svg>
-          <p className="text-[14px]">PRICING</p>
+          <p className="small">PRICING</p>
         </div>
 
-        <div className="w-full lg:w-[394px] text-wrap text-center mx-auto space-y-[15px] flex flex-col items-center">
-          <h2 className="text-[30px] lg:text-[40px] w-full lg:w-[500px] leading-[42.1px] lg:leading-[56.2px]">
-            Choose the Right Plan for Your Growth
-          </h2>
-          <p className="text-dark-electric-blue text-[16px] lg:w-[438px] leading-[24px] ">
-            Brief introduction highlighting the flexibility of pricing plans to
-            cater to different professional needs.
+        <div className="lg:w-[70%] text-center mx-auto space-y-4 flex flex-col items-center">
+          <h4 className="h-max font-montreal leading-snug">
+            Choose the Right Plan for <br /> Your Growth
+          </h4>
+          <p className="text-dark-electric-blue leading-normal">
+            {subtext
+              ? subtext
+              : "Brief introduction highlighting the flexibility of pricing plans to cater to different professional needs."}
           </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 w-full lg:grid-cols-4 gap-[35px] lg:gap-[11.38px] lg:pt-[120px]">
+      <div className="grid grid-cols-1 w-full lg:grid-cols-4 gap-10 lg:gap-8 lg:pt-32">
         {plans.map((plan, idx) => (
           <PricingCard plan={plan} key={idx} />
         ))}
       </div>
 
-      <div className="flex flex-col lg:flex-row space-y-[75px] relative justify-between overflow-clip w-full pl-[30px] py-[50px] lg:py-0 lg:pl-[50px] lg:h-[344px] lg:pt-[50px] bg-[#6F7C8E] rounded-[20px] text-white">
+      <div className="flex flex-col lg:flex-row relative justify-between overflow-clip w-full pl-10 py-12  lg:h-max lg:py-12 bg-[#6F7C8E] rounded-2xl text-white">
         <div className="h-full lg:w-[50%]">
           <div className="lg:w-full pr-[30px] lg:pr-0">
-            <h2 className="text-[30px] font-montreal">
-              Enterprise & Team Plans
-            </h2>
-            <p className="text-[16px] mt-[15px]">
+            <h4 className="font-montreal">Enterprise & Team Plans</h4>
+            <p className="mt-4 font-montreal">
               Custom Pricing Need a custom solution for your organization,
               corporate training, or coaching program? We offer tailored
               enterprise plans with multi-user access, team analytics, and
               coaching support.
             </p>
-            <button className="flex gap-[8px] w-max h-[60px] lg:px-[40px] relative mt-[50px] items-center justify-center rounded-[25px]">
+            <button className="flex gap-2 font-montreal mt-10 mx-auto lg:mx-0 w-full lg:w-max py-4 px-6 items-center justify-center rounded-2xl">
               <p>Contact us for a consultation!</p>
               <svg
                 width="15"
                 height="18"
+                className="h-6 w-7"
                 viewBox="0 0 15 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -113,15 +114,13 @@ function Pricing() {
             </button>
           </div>
         </div>
-        <div className="lg:w-[50%] h-full relative">
-          <img
-            className="hidden lg:block absolute right-0 bottom-0"
-            src="./assets/product.png"
-            alt="engagex product image"
-          />
-        </div>
         <img
-          className="lg:hidden"
+          className="hidden lg:block h-[16rem] absolute right-0 bottom-0"
+          src="./assets/product.png"
+          alt="engagex product image"
+        />
+        <img
+          className="lg:hidden mt-12"
           src="./assets/productmb.png"
           alt="engagex product image"
         />

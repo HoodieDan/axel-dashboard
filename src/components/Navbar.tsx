@@ -1,10 +1,11 @@
 import { useState } from "react";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="flex justify-between bg-gunmetal h-[80px] px-[20px] overflow-clip lg:px-[60px] text-white font-montserrat items-center">
+    <div className="flex justify-between bg-gunmetal h-[5rem] px-10 overflow-clip lg:px-20 text-white font-montserrat items-center">
       <img src="./assets/logo.png" alt="brand logo" className="h-8" />
       <div
         className={clsx(
@@ -14,21 +15,24 @@ function Navbar() {
             : "hidden"
         )}
       >
-        <ul className="flex flex-col lg:flex-row justify-between gap-6 font-light rounded-3xl lg:rounded-full lg:h-[50px] lg:items-center px-4 py-2 lg:py-0 lg:px-[40px] border border-dark-electric-blue/20">
-          <li className="py-4 lg:py-0">Home</li>
-          <li className="py-4 lg:py-0">About</li>
-          <li className="py-4 lg:py-0">Pricing</li>
-          <li className="py-4 lg:py-0">Hive</li>
-          <li className="py-4 lg:py-0">Media</li>
-          <li className="py-4 lg:py-0">Shop</li>
-          <li className="py-4 lg:py-0">EngageX</li>
+        <ul className="flex flex-col lg:flex-row justify-between gap-6 lg:gap-20 font-light rounded-3xl lg:rounded-full lg:items-center px-4 py-2 lg:py-4 lg:px-8 border border-dark-electric-blue/20">
+          <Link to="/">
+            <li className="py-4 lg:py-0">Home</li>
+          </Link>
+          <Link to="/features">
+            <li className="py-4 lg:py-0">Features</li>
+          </Link>
+          <Link to="/pricing">
+            <li className="py-4 lg:py-0">Pricing</li>
+          </Link>
         </ul>
-        <button className="h-[50px] lg:hidden px-[40px] space-x-[8px] border rounded-full border-dark-electric-blue/20">
+        <button className="h-[3rem] lg:hidden space-x-4 border rounded-full border-dark-electric-blue/20">
           <p>Login</p>
           <svg
             width="26"
             height="26"
             viewBox="0 0 26 26"
+            className="h-6 w-6"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -39,11 +43,12 @@ function Navbar() {
           </svg>
         </button>
       </div>
-      <button className="h-[50px] px-[40px] space-x-[8px] hidden lg:flex border rounded-full border-dark-electric-blue/20">
+      <button className="h-[3rem] pl-8 pr-6 space-x-4 hidden lg:flex border rounded-full border-dark-electric-blue/20">
         <p>Login</p>
         <svg
           width="26"
           height="26"
+          className="h-6 w-6"
           viewBox="0 0 26 26"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +61,7 @@ function Navbar() {
       </button>
       <button
         onClick={() => setShowMenu(!showMenu)}
-        className="h-[50px] px-[40px] space-x-[8px] lg:hidden border rounded-full border-dark-electric-blue/20"
+        className="h-[3rem] px-8 space-x-[8px] lg:hidden border rounded-full border-dark-electric-blue/20"
       >
         <svg
           width="24"

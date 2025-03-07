@@ -1,42 +1,11 @@
-import { JSX } from "react";
-import TestimonialSVG from "./svgs/TestimonialSVG";
-import clsx from "clsx";
+import React from "react";
+import BenefitCancelSVG from "../features/svgs/BenefitCancelSVG";
+import BenefitCheckedSVG from "../features/svgs/BenefitCheckedSVG";
 
-type Testimonial = {
-  img?: string;
-  svg?: JSX.Element;
-  alt?: string;
-  text: string;
-  subtext: string;
-  avatar?: string;
-};
-
-function Testiomonial() {
-  let testimonials: Testimonial[] = [
-    {
-      svg: <TestimonialSVG />,
-      text:
-        "“This platform revolutionized how I prepare for keynotes. The audience feedback feels incredibly real!”",
-      subtext: "- Sarah M., Public Speaker",
-      avatar: "./assets/profile3.png",
-    },
-    {
-      img: "./assets/testimonialimg.jpeg",
-      text:
-        "“Practicing my pitch here gave me the confidence to win over investors. I highly recommend!”",
-      subtext: "— John D., Startup Founder",
-    },
-    {
-      svg: <TestimonialSVG />,
-      text:
-        "“I love the detailed analytics and playback options. It's like having a personal speaking coach.”",
-      subtext: "-  Priya S., Corporate Trainer",
-      avatar: "./assets/profile1.png",
-    },
-  ];
+function Benefits() {
   return (
-    <section className="py-26 px-10 lg:px-20 space-y-20 flex flex-col justify-center items-center">
-      <div className="space-y-10 flex flex-col items-center">
+    <section className="px-10 lg:px-20 space-y-20 py-32">
+      <div className="space-y-10 flex flex-col items-center font-montserrat">
         <div className="px-3 py-3 flex gap-2 items-center w-max border rounded-[6px] bg-white border-[#E1E5E7] mx-auto">
           <svg
             width="16"
@@ -51,66 +20,76 @@ function Testiomonial() {
               fill="#4C5C75"
             />
           </svg>
-          <p className="small">TESTIMONIALS</p>
+          <p className="small text-dull-electric-blue">FEATURES</p>
         </div>
 
-        <div className="lg:w-[32rem] text-center mx-auto space-y-4 flex flex-col items-center">
+        <div className="lg:w-[50%] text-center mx-auto space-y-4 flex flex-col items-center">
           <h4 className="h-max font-montreal leading-snug">
-            Loved by Aspiring Speakers and Industry Leaders Alike
+            Why Choose Us <br />
+            Over Traditional Practice Methods
           </h4>
-          <p className="text-dark-electric-blue leading-normal">
-            Track progress, receive actionable feedback, and captivate your
-            audience like never before.
-          </p>
         </div>
       </div>
 
-      <div className="w-full overflow-x-auto">
-        <div className="flex gap-8 lg:flex-nowrap flex-wrap lg:pr-8">
-          {testimonials.map((testimonial, idx) => (
-            <div
-              key={idx}
-              className="flex-shrink-0 w-full lg:w-[30rem] h-[25rem] relative bg-[#C1C2B4] overflow-clip rounded-2xl"
-            >
-              {testimonial.img ? (
-                <img
-                  src={testimonial.img}
-                  className="absolute h-full w-full object-cover"
-                  alt="profile"
-                />
-              ) : (
-                testimonial.svg
-              )}
-              <div className="flex h-full justify-end items-end">
-                <div
-                  className={clsx(
-                    "space-y-6 relative z-10 p-6 py-8 items-end justify-baseline",
-                    testimonial.img
-                      ? "bg-gradient-to-b from-black/0 to-black from-0% to-50% text-white"
-                      : "bg-[#C1C2B4]"
-                  )}
-                >
-                  <p className="big">{testimonial.text}</p>
-                  <div className="flex gap-6 items-center">
-                    {testimonial.avatar && (
-                      <img
-                        src={testimonial.avatar}
-                        className="h-8 w-8"
-                        alt="profile"
-                      />
-                    )}
-                    <p className="small">{testimonial.subtext}</p>
-                  </div>
-                </div>
+      <div className="font-montserrat bg-gunmetal text-white p-5 rounded-3xl">
+        <div className="flex w-full gap-x-10">
+          <div className="w-1/3 py-4">
+            <p className="big border-b border-b-white/10 h-10">
+              Realistic Audience Reactions
+            </p>
+            <p className="big border-b border-b-white/10 h-16 flex items-end pb-2">
+              Real-Time Feedback
+            </p>
+            <p className="big border-b border-b-white/10 h-16 flex items-end pb-2">
+              Engagement Analytics
+            </p>
+            <p className="big h-16 border-b border-b-white/10 flex items-end pb-2">
+              Flexible Virtual Environments
+            </p>
+            <p className="big h-16 flex items-end pb-2">Progress Tracking</p>
+          </div>
+          <div className="w-2/3 bg-white h-full divide-x py-4 flex rounded-2xl">
+            <div className="flex-1 w-full flex flex-col items-center">
+              <div className="h-10 flex items-center">
+                <BenefitCancelSVG />
+              </div>
+              <div className="h-16 flex items-center">
+                <BenefitCancelSVG />
+              </div>
+              <div className="h-16 flex items-center">
+                <BenefitCancelSVG />
+              </div>
+              <div className="h-16 flex items-center">
+                <BenefitCancelSVG />
+              </div>
+              <div className="h-16 flex items-center">
+                <BenefitCancelSVG />
               </div>
             </div>
-          ))}
+            <div className="flex-1 w-full flex flex-col items-center">
+              <div className="h-10 flex items-center">
+                <BenefitCheckedSVG />
+              </div>
+              <div className="h-16 flex items-center">
+                <BenefitCheckedSVG />
+              </div>
+              <div className="h-16 flex items-center">
+                <BenefitCheckedSVG />
+              </div>
+              <div className="h-16 flex items-center">
+                <BenefitCheckedSVG />
+              </div>
+              <div className="h-16 flex items-center">
+                <BenefitCheckedSVG />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="relative w-full flex justify-center">
+      <div className="w-full flex items-center justify-center">
         <button className="flex gap-2 mx-auto lg:mx-0 w-full lg:w-max py-4 px-6 items-center justify-center rounded-2xl relative">
-          <p>Join the community</p>
+          <p>Sign Up Now</p>
           <svg
             width="15"
             height="18"
@@ -130,4 +109,4 @@ function Testiomonial() {
   );
 }
 
-export default Testiomonial;
+export default Benefits;
