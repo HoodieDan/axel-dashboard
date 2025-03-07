@@ -32,12 +32,12 @@ const UserPlan = () => {
   
 
   return (
-    <div className="md:h-screen h-full md:overflow-y-hidden  lg:px-10 md:px-0 p-5 max-lg:py-0 max-lg:justify-between max-md:block   max-lg:flex-row justify-center lg:justify-start md:flex-row flex-col flex gap-5">
-      <div className="auth flex-1 lg:flex-[0.9] py-5">
-        {signupFlow === "authQuestions" && (
+    <div className="md:h-screen h-full md:overflow-y-hidden  lg:px-10 md:px-0 px-5  max-lg:py-0 max-lg:justify-between max-md:block   max-lg:flex-row justify-center lgjustify-start md:flex-row flex-col flex gap-5">
+      <div className="auth flex-1 lg:flex-[0.9] ">
+        {signupFlow === "authQuestions" && location.pathname === "/signup" && (
           <Link
             to="/"
-            className="w-fit flex h-[30px] md:hidden items-center rounded-3xl gap-2 py-6 px-5 bg-gradient-to-br from-[#c6c6c247] to-[#feeedd25] bg-slate-10 g-transparent text-black"
+            className="w-fit flex h-[30px] md:hidden items-center mt-5 rounded-3xl gap-2 py-6 px-5 bg-gradient-to-br from-[#c6c6c247] to-[#feeedd25] bg-slate-10 g-transparent text-black"
           >
             <svg
               width="12"
@@ -59,7 +59,7 @@ const UserPlan = () => {
             <Outlet />
         </div>
       </div>
-      <aside className="flex-1 rounded-[45px] max-lg:rounded-none md:block hidden overflow-hidden relative">
+      <aside className="flex-1 rounded-[45px] max-lg:rounded-none lg:my-5 md:block hidden overflow-hidden relative">
         <Link
           to="/"
           className="absolute top-[4%] left-4 flex h-[30px] items-center rounded-3xl gap-2 py-6 px-5 backdrop-blur-lg bg-transparent text-black"
