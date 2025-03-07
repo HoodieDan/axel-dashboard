@@ -1,5 +1,3 @@
-import React from "react";
-
 function HowItWorksCardTwoSVG({ className }: { className?: string }) {
   return (
     <svg

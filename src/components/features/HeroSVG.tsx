@@ -1,5 +1,3 @@
-import React from "react";
-
 function HeroSVG() {
   return (
     <div className="flex-1 flex items-center h-full justify-end">

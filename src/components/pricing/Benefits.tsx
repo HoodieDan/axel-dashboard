@@ -1,4 +1,3 @@
-import React from "react";
 import BenefitCancelSVG from "../features/svgs/BenefitCancelSVG";
 import BenefitCheckedSVG from "../features/svgs/BenefitCheckedSVG";
 
