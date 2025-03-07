@@ -151,7 +151,7 @@ const Signup: React.FC = () => {
                         )}
                     />
 
-                    <Button type="submit" className="rounded-3xl font-[Montserrat]  py-7">
+                    <Button type="submit" className="rounded-3xl font-[Montserrat] bg-[#262b3a] hover:bg-[#262b3ada] py-7">
                         Get Started
                     </Button>
                 </form>

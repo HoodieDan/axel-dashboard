@@ -90,7 +90,7 @@ const Login: React.FC = () => {
                         )}
                     />
 
-                    <Button type="submit" className="py-7 md:py-[23px] font-[Inter] rounded-3xl">
+                    <Button type="submit" className="py-7 md:py-[23px] font-[Inter] bg-[#262b3a] hover:bg-[#262b3ada] rounded-3xl">
                         Login
                     </Button>
                 </form>

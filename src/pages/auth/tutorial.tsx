@@ -17,7 +17,7 @@ const Tutorial: React.FC = () => {
                 </div>
                 <button
                     onClick={() => navigate("../../dashboard/user")}
-                    className="font-[Montserrat] w-full lg:max-w-[360px]"
+                    className="font-[Montserrat] w-full lg:max-w-[360px] bg-[#262b3a] hover:bg-[#262b3ada]"
                 >
                     Finish up
                 </button>

@@ -23,7 +23,7 @@ const Confirmation: React.FC = () => {
                 </button>
                 <button
                     onClick={() => navigate("../tutorial")}
-                    className=" text-white flex-[30] h-[50px]  md:w-[240px] rounded-[20px]"
+                    className=" text-white flex-[30] h-[50px] bg-[#262b3a] hover:bg-[#262b3ada] md:w-[240px] rounded-[20px]"
                     type="submit"
                 >
                     Go to mail

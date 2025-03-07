@@ -61,7 +61,7 @@ const ForgotPassword: React.FC = () => {
                         </Link>
                         <Button
                             type="submit"
-                            className="text-white flex items-center justify-center flex-[4.5] bg-[#262b3a] py-7 md:py-[22px] rounded-3xl"
+                            className="text-white flex items-center justify-center flex-[4.5] bg-[#262b3a] hover:bg-[#262b3ada] py-7 md:py-[22px] rounded-3xl"
                         >
                             Get reset link
                         </Button>
