@@ -6,7 +6,6 @@ import presentationBg from '../../../assets/images/jpegs/presentation-bg.jpeg';
 import practiceBg from '../../../assets/images/jpegs/practice-bg.png';
 import SemiCircleProgress from '../../../components/dashboard/SemiCircleProgress';
 import SegmentedProgressBar from '../../../components/dashboard/SegmentedProgressBar';
-// import LineChart from '../../../components/dashboard/LineChart';
 import ShadLineChart from '../../../components/dashboard/ShadLineChart';
 
 const UserDashboardHome: React.FC = () => {
