@@ -6,7 +6,7 @@ import { welcomeMessage } from "@/components/layouts/userAuth";
 const Tutorial: React.FC = () => {
     const navigate = useNavigate();
     return (
-        <div className="md:w-10/12 sm:w-3/5 md:h-screen    sm:mx-auto md:flex  flex-col   overflow-y-auto gap-2 max-md:pl-0 max-lg:pl-5">
+        <div className="md:w-10/12 sm:w-3/5 h-screen flex justify-center   sm:mx-auto flex-col   overflow-y-auto gap-2 max-md:pl-0 max-lg:pl-5">
             {welcomeMessage()}
             <div className="flex justify-center items-center mt-0 flex-col">
                 <p className="text-[#667085] font-[Montserrat] -mt-3 mb-8">

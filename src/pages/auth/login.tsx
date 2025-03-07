@@ -39,7 +39,7 @@ const Login: React.FC = () => {
     };
 
     return (
-        <div className="login-container font-[Inter] sm:w-10/12 px-1 sm:mx-auto md:flex block flex-col justify-center h-full md:h-screen md:overflow-y-hidden max-md:pl-0 max-lg:pl-5">
+        <div className="login-container font-[Inter] sm:w-10/12 px-1 sm:mx-auto flex flex-col justify-center h-screen md:overflow-y-hidden max-md:pl-0 max-lg:pl-5">
             {welcomeMessage()}
             <Form {...form}>
                 <form
@@ -110,7 +110,7 @@ const Login: React.FC = () => {
 
                 <Link
                     to="../forgot-password"
-                    className="font-semibold hover:bg-[#262b3a60] p-2 bg-transparent shadow-none rounded-lg text-sm text-[#262b3a]"
+                    className="font-semibold hover:bg-transparent p-2 bg-transparent shadow-none rounded-lg text-sm text-[#262b3a]"
                 >
                     Forgot Password
                 </Link>

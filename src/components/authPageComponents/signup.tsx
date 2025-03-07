@@ -56,7 +56,7 @@ const Signup: React.FC = () => {
     };
 
     return (
-        <div className="signup-container sm:w-10/12 px-1 sm:mx-auto md:flex block flex-col justify-center h-full md:h-screen md:overflow-y-hidden max-md:pl-0 max-lg:pl-5">
+        <div className="signup-container sm:w-10/12 px-1 sm:mx-auto md:flex flex flex-col justify-center h-screen md:overflow-y-hidden max-md:pl-0 max-lg:pl-5">
             {welcomeMessage()}
             <Form {...form}>
                 <form
