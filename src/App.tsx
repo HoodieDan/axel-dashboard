@@ -9,6 +9,7 @@ import UserSettings from "./pages/Dashboard/User/Settings";
 import UserSessionHistory from "./pages/Dashboard/User/UserSessionHistory";
 import HomePage from "./pages/HomePage";
 import "./styles/index.scss";
+import Help from "./pages/Dashboard/User/help";
 
 function App() {
     return (
@@ -24,6 +25,8 @@ function App() {
                         <Route path="session-history" element={<UserSessionHistory />} />
                         <Route path="analytics" element={<UserAnalytics />} />
                         <Route path="settings" element={<UserSettings />} />
+                        <Route path="help" element={<Help />} />
+
                     </Route>
 
                     <Route path="/dashboard/admin" element={<DashboardLayout />}>
