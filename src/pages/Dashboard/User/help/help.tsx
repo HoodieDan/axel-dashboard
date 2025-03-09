@@ -1,14 +1,16 @@
-import React from "react";
-import webImage from "../../../assets/images/pngs/web-image.png";
-import helloBotImage from "../../../assets/images/pngs/hello-bot.png";
-import mailImage from "../../../assets/images/pngs/mail-image.png";
+import React, { useState } from "react";
+import webImage from "../../../../assets/images/pngs/web-image.png";
+import helloBotImage from "../../../../assets/images/pngs/hello-bot.png";
+import mailImage from "../../../../assets/images/pngs/mail-image.png";
 import { Link, useNavigate } from "react-router-dom";
+import GetInTouch from "@/components/help/GetInTouch";
 
 const Help: React.FC = () => {
     const navigate = useNavigate();
+     const [isOpen, setIsOpen] = useState<boolean>(false);
     return (
         <div className="m-0 p-0">
-            <section className="w-full border-y flex items-start text-[#474D63] py-2 gap-2 ">
+            <section className="w-full border-y flex items-start text-[#262b3a] py-2 px-7 gap-2 ">
                <button className="bg-transparent hover:bg-transparent p-0" onClick={() => navigate(-1)}>
 
                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,34 +25,33 @@ const Help: React.FC = () => {
                         </button>
 
                 <div>
-                    <p className="font-medium text-xl">Help & Support</p>
-                    <p className="text-muted-foregroun text-sm">
+                    <p className=" text-xl">Help & Support</p>
+                    <p className="text-muted-foregroun text-[rgba(71,77,99,1)] text-sm">
                         Our help & support for all your questions and concerns
                     </p>
                 </div>
             </section>
-            <main>
+            {<GetInTouch isOpen={isOpen} setIsOpen={setIsOpen} />}
+            <main className="px-7">
                 <section>
                     <p className="font-medium text-xl my-7 text-[#474D63]">How can we help you?</p>
                     <div className="font-[montserrat] flex gap-7 flex-wrap max-md:flex-col sm:items-center text-white">
                         <Link to="safety">
-                            <div className="sm:w-80 w-full hover:scale-105 duration-300 overflow-hidden  text-lg font-semibold py-4 px-6 relative rounded-3xl bg-[#10161E] h-32">
+                            <div className="sm:w-72 w-full hover:scale-105 duration-300 overflow-hidden  text-lg font-semibold py-4 px-6 relative rounded-3xl bg-[#10161E] h-32">
                                 <p>
                                     Safety & <br /> Privacy
                                 </p>
                                 <img src={webImage} className="w-auto right-0 absolute bottom-0" alt="web image" />
                             </div>
                         </Link>
-                        <Link to="contact">
-                            <div className="sm:w-80 w-full bg-[#757575] hover:scale-105 duration-300 overflow-hidden py-4 px-6 text-lg font-semibold relative rounded-3xl h-32">
-                                <p>
+                            <button onClick={()=> setIsOpen(true)} className="sm:w-72 w-full bg-[#757575] hover:scale-105 duration-300 overflow-hidden justify-normal items-start text-left px-6 py-4 text-lg font-semibold relative rounded-3xl h-32">
+                                <p className="w-fit p-0 m-0">
                                     Contact <br /> Our mail
                                 </p>
                                 <img src={mailImage} className="absolute w-auto right-0 bottom-0" alt="mail image" />
-                            </div>
-                        </Link>
+                            </button>
                         <Link to="message">
-                            <div className="sm:w-80 w-full py-4 bg-[#5279a2] hover:scale-105 duration-300 overflow-hidden px-6 text-lg font-semibold relative rounded-3xl h-32">
+                            <div className="sm:w-72 w-full py-4 bg-[#5279a2] hover:scale-105 duration-300 overflow-hidden px-6 text-lg font-semibold relative rounded-3xl h-32">
                                 <p>
                                     Message <br /> Chatbot
                                 </p>
@@ -64,9 +65,9 @@ const Help: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="w-full bg-[#262b3a] text-white rounded-3xl font-[montserrat] mb-16 py-20 px-10 gap-3 mt-10 flex flex-col justify-center items-center">
-                    <p className="text-4xl font-medium text-center ">Still want to know more?</p>
-                    <p className="text-[#a5b8c3] text-xl text-center">Visit our FAQs page to know more about our services at EngageX</p>
+                <section className="w-full bg-[#262b3a] text-white rounded-3xl font-[montserrat] mb-28 sm:mb-16 py-20 px-10 gap-3 mt-10 flex flex-col justify-center items-center">
+                    <p className="text-4xl max-sm:text-3xl max-sm:leading-10 font-medium text-center ">Still want to know more?</p>
+                    <p className="text-[#a5b8c3] sm:text-xl  text-center">Visit our FAQs page to know more about our services at EngageX</p>
                     <Link className="mt-5 " to="/faqs">
                         <div className="bg-[#6f7c8e]  text-lg flex items-center gap-0 px-8 py-3  hover:bg-[#6f7c8e90] border-dotted  !important border-[#6f7c8e] rounded-md">
                             <p className=" font-medium">Visit our FAQs</p>
