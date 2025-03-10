@@ -125,7 +125,7 @@ const AdminDashboardHome: React.FC = () => {
     };
 
     return (
-        <div className="admin__dashboard__index py-3">
+        <div className="admin__dashboard__index py-3 px-4">
             {/* top cards  */}
             <div className="flex flex-wrap items-stretch">
                 {cardsData.map((card, index) => (

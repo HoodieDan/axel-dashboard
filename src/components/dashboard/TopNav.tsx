@@ -26,7 +26,7 @@ const TopNav: React.FC = () => {
                     <BreadcrumbList>
                         <BreadcrumbItem>
                             <BreadcrumbLink asChild>
-                                <Link to="/">Home</Link>
+                                <Link to="/dashboard">Home</Link>
                             </BreadcrumbLink>
                         </BreadcrumbItem>
 

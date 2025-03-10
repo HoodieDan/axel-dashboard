@@ -114,7 +114,7 @@ const UserDashboardHome: React.FC = () => {
       };
 
     return (
-        <div className='user__dashboard__index'>
+        <div className='user__dashboard__index p-4'>
             <p className='independence mb-5'>You’re making progress! Pick up where you left off</p>
 
             {/* cards */}
