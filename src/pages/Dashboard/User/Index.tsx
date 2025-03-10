@@ -6,7 +6,8 @@ import presentationBg from '../../../assets/images/jpegs/presentation-bg.jpeg';
 import practiceBg from '../../../assets/images/jpegs/practice-bg.png';
 import SemiCircleProgress from '../../../components/dashboard/SemiCircleProgress';
 import SegmentedProgressBar from '../../../components/dashboard/SegmentedProgressBar';
-import LineChart from '../../../components/dashboard/LineChart';
+// import LineChart from '../../../components/dashboard/LineChart';
+import ShadLineChart from '../../../components/dashboard/ShadLineChart';
 
 const UserDashboardHome: React.FC = () => {
 
@@ -98,25 +99,20 @@ const UserDashboardHome: React.FC = () => {
         },
     ]
 
-    const labels = ["10 Feb", "11 Feb", "12 Feb", "13 Feb", "14 Feb", "15 Feb", "16 Feb"];
-
-    const datasets = [
-        {
-            label: "Volume",
-            data: [9, 12, 12, 12, 16.5, 15, 15],
-            color: "#252A39",
-        },
-        {
-            label: "Articulation",
-            data: [8, 9, 4.5, 4.7, 7.5, 7, 7],
-            color: "#40B869",
-        },
-        {
-            label: "Confidence",
-            data: [0, 2, 6, 5, 15, 4, 3.5],
-            color: "#F5B546",
-        },
-    ];
+    const chartData = [
+        { month: "January", Volume: 186, Articulation: 80, Confidence: 90 },
+        { month: "February", Volume: 305, Articulation: 200, Confidence: 100 },
+        { month: "March", Volume: 237, Articulation: 120, Confidence: 100 },
+        { month: "April", Volume: 73, Articulation: 190, Confidence: 100 },
+        { month: "May", Volume: 209, Articulation: 130, Confidence: 100 },
+        { month: "June", Volume: 214, Articulation: 140, Confidence: 100 },
+      ];
+      
+      const chartColors = {
+        Volume: "#252A39",
+        Articulation: "#40B869",
+        Confidence: "#F5B546",
+      };
 
     return (
         <div className='user__dashboard__index'>
@@ -124,7 +120,7 @@ const UserDashboardHome: React.FC = () => {
 
             {/* cards */}
             <div className="flex flex-wrap -mx-2 items-stretch">
-                <div className="w-full md:w-1/2 lg:w-1/4 px-2 mb-3">
+                <div className="w-full lg:w-1/4 px-2 mb-3">
                     <div className="index__card p-4 flex flex-col h-full justify-between rounded-[12px] relative overflow-hidden">
                         <img src={cardFlower} alt="card flower background" className='absolute top-0 right-0 h-1/2' />
                         <small className="independence mb-3.5">Available Credit</small>
@@ -133,7 +129,7 @@ const UserDashboardHome: React.FC = () => {
                     </div>
                 </div>
                 {cardsData.map((card, index) => (
-                    <div key={index} className="w-full md:w-1/2 lg:w-1/4 px-2 mb-3 hidden md:block">
+                    <div key={index} className="w-full md:w-1/3 lg:w-1/4 px-2 mb-3 hidden md:block">
                         <div className="index__card other__cards p-4 flex flex-col h-full justify-between rounded-[8px] relative overflow-hidden" style={{ background: `linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${card.image})` }}>
                             <h6 className='text-white mb-4'>{card.title}</h6>
                             <small className='light__silver mb-5'>{card.text}</small>
@@ -184,7 +180,7 @@ const UserDashboardHome: React.FC = () => {
                         </div>
 
                         <div className="chart__div">
-                            <LineChart labels={labels} datasets={datasets} />
+                            <ShadLineChart data={chartData} colors={chartColors} />
                         </div>
 
                     </div>
@@ -215,7 +211,7 @@ const UserDashboardHome: React.FC = () => {
                                             <small>{ goal.title }</small>
                                             <small>{ goal.percent }%</small>
                                         </div>
-                                        <div className='mt-1'>
+                                        <div className='mt-2'>
                                             <SegmentedProgressBar percent={goal.percent} color={goal.color} divisions={10} />
                                         </div>
                                     </div>

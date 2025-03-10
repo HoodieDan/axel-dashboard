@@ -1,7 +1,8 @@
 import React from 'react';
-import LineChart from '../../../components/dashboard/LineChart';
-import MixedChart from '../../../components/dashboard/MixedChart';
-import TableComponent from '../../../components/dashboard/TableComponent';
+import ShadLineChart from '../../../components/dashboard/ShadLineChart';
+import ShadAreaChart from '@/components/dashboard/ShadAreaChart';
+import RecentSessions from '../../../components/dashboard/RecentSessionsTable';
+import ShadDonutChart from '@/components/dashboard/ShadDonutChart';
 
 const AdminDashboardHome: React.FC = () => {
 
@@ -54,32 +55,44 @@ const AdminDashboardHome: React.FC = () => {
         },
     ]
 
-    const labels = ["10 Feb", "11 Feb", "12 Feb", "13 Feb", "14 Feb", "15 Feb", "16 Feb"];
-
-    const datasets = [
-        {
-            label: "Pitch",
-            data: [9, 12, 12, 12, 16.5, 15, 15],
-            color: "#252A39",
-        },
-        {
-            label: "Presentation",
-            data: [8, 9, 4.5, 4.7, 7.5, 7, 7],
-            color: "#40B869",
-        },
-        {
-            label: "Keynote",
-            data: [0, 2, 6, 5, 15, 4, 3.5],
-            color: "#F5B546",
-        },
+    const lineChartData = [
+        { month: "January", Pitch: 186, Presentation: 80, Keynote: 90 },
+        { month: "February", Pitch: 305, Presentation: 200, Keynote: 100 },
+        { month: "March", Pitch: 237, Presentation: 120, Keynote: 100 },
+        { month: "April", Pitch: 73, Presentation: 190, Keynote: 100 },
+        { month: "May", Pitch: 209, Presentation: 130, Keynote: 100 },
+        { month: "June", Pitch: 214, Presentation: 140, Keynote: 100 },
     ];
+      
+    const lineChartColors = {
+        Pitch: "#252A39",
+        Presentation: "#40B869",
+        Keynote: "#F5B546",
+    };
 
-    const seriesData = [
-        { name: "Current Week", type: "area", data: [5, 10, 15, 25, 18, 14, 10] },
-        { name: "Previous Week", type: "line", data: [3, 8, 12, 20, 15, 10, 7], dashArray: 5 },
+    const areaChartData = [
+        { month: "January", currentWeek: 186, previousWeek: 80 },
+        { month: "February", currentWeek: 305, previousWeek: 200 },
+        { month: "March", currentWeek: 237, previousWeek: 120 },
+        { month: "April", currentWeek: 73, previousWeek: 190 },
+        { month: "May", currentWeek: 209, previousWeek: 130 },
+        { month: "June", currentWeek: 214, previousWeek: 140 },
     ];
-    
-    const categoriesData = ["10 Feb", "11 Feb", "12 Feb", "13 Feb", "14 Feb", "15 Feb", "16 Feb"];
+      
+    const areaChartColors = {
+        currentWeek: "#F5B546",
+        previousWeek: "#F8DFC3",
+    };
+
+    const donutChartData = [
+        { name: "ActiveUsers", value: 908, fill: "#252A39" },
+        { name: "InactiveUsers", value: 92, fill: "#B9BCC8" },
+    ];
+      
+    const donutChartColors = {
+        ActiveUsers: "#252A39",
+        InactiveUsers: "#B9BCC8",
+    };
 
     return (
         <div className='admin__dashboard__index py-3'>
@@ -87,7 +100,7 @@ const AdminDashboardHome: React.FC = () => {
             {/* top cards  */}
             <div className="flex flex-wrap items-stretch">
                 {cardsData.map((card, index) => (
-                    <div key={index} className="top__cards w-full md:w-1/2 lg:w-1/4 px-2 mb-4">
+                    <div key={index} className="top__cards w-full md:w-1/2 lg:w-1/4 px-2 mb-3">
                         <div className="dash__card p-4 flex flex-col h-full justify-between rounded-[12px] relative overflow-hidden">
                             <div className="mb-4 flex items-center">
                                 {card.icon}
@@ -117,7 +130,7 @@ const AdminDashboardHome: React.FC = () => {
             {/* charts */}
             <div className="flex flex-col lg:flex-row lg:items-stretch gap-4">
                 {/* First Column */}
-                <div className="w-full lg:w-1/2 lg:pe-2 mt-3 mb-4">
+                <div className="w-full lg:w-1/2 mt-3 mb-3">
                     <div className="sessions__number dash__card h-full flex flex-col px-5 py-7 rounded-[8px]">
                         <div className="flex justify-between items-center mb-6">
                             <p className="big chinese__black">Number of Sessions</p>
@@ -130,13 +143,13 @@ const AdminDashboardHome: React.FC = () => {
                             </div>
                         </div>
                         <div className="chart__div flex-1">
-                            <LineChart labels={labels} datasets={datasets} />
+                            <ShadLineChart data={lineChartData} colors={lineChartColors} />
                         </div>
                     </div>
                 </div>
 
                 {/* Second Column */}
-                <div className="w-full lg:w-1/2 lg:ps-2 mt-3 mb-4">
+                <div className="w-full lg:w-1/2 mt-3 mb-3">
                     <div className="sessions__number dash__card h-full flex flex-col px-5 py-7 rounded-[8px]">
                         <div className="flex justify-between items-center mb-6">
                             <p className="big chinese__black">User Growth</p>
@@ -148,16 +161,71 @@ const AdminDashboardHome: React.FC = () => {
                             </select>
                             </div>
                         </div>
-                        <div className="chart__div mixed__chart flex-1">
-                            <MixedChart series={seriesData} categories={categoriesData} />
+                        <div className="chart__div flex-1">
+                            <ShadAreaChart data={areaChartData} colors={areaChartColors} />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="flex flex-wrap">
-                <div className="w-full lg:w-6/9 lg:pe-2 mb-4 mt-3">
-                    <TableComponent />
+            <div className="flex flex-wrap lg:items-stretch">
+                <div className="w-full lg:w-6/9 lg:pe-2 mb-4 mt-3 shad__table">
+                    <div className="dash__card px-5 py-4 rounded-[8px]">
+                        <RecentSessions />
+                    </div>
+                </div>
+
+                <div className="w-full lg:w-3/9 lg:ps-2 mb-4 mt-3 h-full">
+                    <div className="dash__card w-full px-5 py-4 rounded-[8px]">
+                        <div className="flex items-center justify-between mb-4">
+                            <p className="big">Active Users</p>
+                            <small className="underline cursor-pointer">View All</small>
+                        </div>
+                        <div className="w-full h-auto donut__chart">
+                            <div className="h-auto mb-3">
+                                <ShadDonutChart data={donutChartData} colors={donutChartColors} />
+                            </div>
+
+                            <div className="donut__details p-3">
+
+                                {/* total users  */}
+                                <div className="flex justify-between items-center mb-2.5">
+                                    <div className="flex gap-2 items-center">
+                                        <h4 className='gunmetal'>1024</h4>
+                                        <p className='auro__metal'>Total Users</p>
+                                    </div>
+                                    <div className="flex items-center me-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13.7508 9C13.7508 8.80109 13.8298 8.61032 13.9705 8.46967C14.1111 8.32902 14.3019 8.25 14.5008 8.25H18.0008C18.1997 8.25 18.3905 8.32902 18.5312 8.46967C18.6718 8.61032 18.7508 8.80109 18.7508 9V12.5C18.7508 12.6989 18.6718 12.8897 18.5312 13.0303C18.3905 13.171 18.1997 13.25 18.0008 13.25C17.8019 13.25 17.6111 13.171 17.4705 13.0303C17.3298 12.8897 17.2508 12.6989 17.2508 12.5V10.81L12.5308 15.53C12.3902 15.6705 12.1996 15.7493 12.0008 15.7493C11.8021 15.7493 11.6114 15.6705 11.4708 15.53L9.00082 13.06L6.53082 15.53C6.38865 15.6625 6.2006 15.7346 6.0063 15.7312C5.812 15.7277 5.62661 15.649 5.4892 15.5116C5.35179 15.3742 5.27308 15.1888 5.26965 14.9945C5.26622 14.8002 5.33834 14.6122 5.47082 14.47L8.47082 11.47C8.61145 11.3295 8.80207 11.2507 9.00082 11.2507C9.19957 11.2507 9.3902 11.3295 9.53082 11.47L12.0008 13.94L16.1908 9.75H14.5008C14.3019 9.75 14.1111 9.67098 13.9705 9.53033C13.8298 9.38968 13.7508 9.19891 13.7508 9Z" fill="#07A042"/>
+                                        </svg>
+                                        <p style={{ color: '#07A042' }}>1.7%</p>
+                                    </div>
+                                </div>
+
+                                {/* Active Users  */}
+                                <div className="flex justify-between items-center mb-2">
+                                    <div className="flex gap-2 items-center">
+                                        <div className="gunmetal__bg h-4 w-2 rounded-[2px]"></div>
+                                        <p className='auro__metal'>Active Users</p>
+                                    </div>
+                                    <div className="flex items-center me-2">
+                                        <p className='gunmetal'>908</p>
+                                    </div>
+                                </div>
+
+                                {/* inactive users  */}
+                                <div className="flex justify-between items-center">
+                                    <div className="flex gap-2 items-center">
+                                        <div className="auro__bg h-4 w-2 rounded-[2px]"></div>
+                                        <p className='auro__metal'>Inactive Users</p>
+                                    </div>
+                                    <div className="flex items-center me-2">
+                                        <p className='gunmetal'>92</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
