@@ -113,7 +113,9 @@ function Footer() {
         <div className="flex items-center gap-4">
           <p>Terms & Condition</p>
           <div className="h-2 w-2 rounded-full bg-white" />
-          <p>Privacy Policy</p>
+          <Link to="/privacypolicy">
+            <p>Privacy Policy</p>
+          </Link>
         </div>
       </div>
     </section>

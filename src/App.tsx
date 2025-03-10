@@ -9,6 +9,7 @@ import "./App.css";
 import AdminDashboardHome from "./pages/Dashboard/Admin/Index";
 import Features from "./pages/Features";
 import Pricing from "./pages/Pricing";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/features" element={<Features />} />
           <Route path="/pricing" element={<Pricing />} />
+
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
 
           {/* Dashboard Layout Routes */}
           <Route path="/dashboard/user" element={<DashboardLayout />}>
