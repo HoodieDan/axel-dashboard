@@ -22,14 +22,14 @@ const DashboardLayout = () => {
                     {/* Top Nav with Breadcrumbs */}
                     <TopNav />
 
-                    {/* Main Content Area with Outlet */}
-                    <div className="flex-1 p-4 overflow-y-auto">
-                        <Outlet />
-                    </div>
-                </SidebarInset>
-            </div>
-        </SidebarProvider>
-    );
+          {/* Main Content Area with Outlet */}
+          <div className="flex-1 overflow-y-auto">
+            <Outlet />
+          </div>
+        </SidebarInset>
+      </div>
+    </SidebarProvider>
+  );
 };
 
 export default DashboardLayout;
