@@ -205,7 +205,7 @@ input, textarea {
 
 button {
   padding: 16px 30px;
-  background: $color-gunmetal;
+  background-color: $color-gunmetal;
   color: $color-white;
   border-radius: 20px;
   border: none;
@@ -215,7 +215,7 @@ button {
   cursor: pointer;
 
   &.outline {
-    background: none;
+    background-color: none;
     border: 1px solid $color-black;
     border-radius: 30px;
     color: $color-white;
@@ -223,7 +223,7 @@ button {
   }
 
   &.green__sheen {
-    background: $color-green-sheen;
+    background-color: $color-green-sheen;
   }
 }
 
@@ -261,4 +261,8 @@ button {
 
 .chinese__black {
   color: $color-chinese-black;
+}
+
+.auro__metal {
+  color: $color-auro-metal-saurus;
 }
